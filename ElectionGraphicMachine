@@ -482,90 +482,17 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
 # Example usage
 ridings = [
 { 'name': 'Atlantic Canada',
-    'final_results': [402388, 366653, 435897],
-    'candidate_names': ['Unlucky_Kale_5342', 'zetix026', 'PhlebotinumEddie'],
-    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada', 'New Democratic Party'],
-    'short_name': ['CPC', 'LPC', 'NDP']
-  },
-{ 'name': 'Quebec City-Eastern and Northern Quebec',
-    'final_results': [657036, 333469],
-    'candidate_names': ['raymondl810', 'Zhuk236'],
-    'party_names': ['Conservative Party of Canada', 'New Democratic Party'],
-    'short_name': ['CPC', 'NDP']
-  }, { 'name': 'Laval-Gatineau-North Shore',
-    'final_results': [375746, 817769],
-    'candidate_names': ['Effective-Cow-9223', 'Lady_Aya'],
-    'party_names': ['New Democratic Party', 'Independent'],
-    'short_name': ['NDP', 'IND']
-  }, { 'name': 'Montreal',
-    'final_results': [1002133],
-    'candidate_names': ['Model-EpicMFan'],
-    'party_names': ['New Democratic Party'],
-    'short_name': ['NDP']
-  },
-{ 'name': 'Toronto',
-    'final_results': [762046, 635132],
-    'candidate_names': ['FreedomCanada2025', 'Tyty_1234'],
-    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
-    'short_name': ['CPC', 'LPC']
-  }, { 'name': 'Golden Horseshoe',
-    'final_results': [1131801, 408861],
-    'candidate_names': ['jeninhenin', 'CosmoCosma'],
-    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
-    'short_name': ['CPC', 'LPC']
-  }, { 'name': 'Southwestern Ontario',
-    'final_results': [1041655, 308311],
-    'candidate_names': ['Hayley-182', 'Phonexia2'],
-    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
-    'short_name': ['CPC', 'LPC']
-  }, { 'name': 'Central Ontario',
-    'final_results': [934574, 556805],
-    'candidate_names': ['SettingObvious4738', 'MrWhiteyIsAwesome'],
-    'party_names': ['Liberal Party of Canada', 'New Democratic Party'],
-    'short_name': ['LPC', 'NDP']
-  }, { 'name': 'Northern and Eastern Ontario',
-    'final_results': [1108352, 144579],
-    'candidate_names': ['Trick_Bar_1439', 'redwolf177'],
-    'party_names': ['Liberal Party of Canada', 'New Democratic Party'],
-    'short_name': ['LPC', 'NDP']
-  }, { 'name': 'Prairies',
-    'final_results': [338429, 898900],
-    'candidate_names': ['Melp8836', 'SaskPoliticker'],
-    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
-    'short_name': ['CPC', 'LPC']
-  }, { 'name': 'Territories',
-    'final_results': [59080],
-    'candidate_names': ['Scribba25'],
-    'party_names': ['New Democratic Party'],
-    'short_name': ['NDP']
-  }, { 'name': 'Alberta North',
-    'final_results': [398949, 155144, 461856],
-    'candidate_names': ['realbassist', 'Ohwen', 'username222222345'],
-    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada', 'New Democratic Party'],
-    'short_name': ['CPC', 'LPC', 'NDP']
-  }, { 'name': 'Alberta South',
-    'final_results': [1121025],
-    'candidate_names': ['NinjjaDragon'],
-    'party_names': ['New Democratic Party'],
-    'short_name': ['NDP']
-  }, { 'name': 'Vancouver and the Islands',
-    'final_results': [904516, 364255],
-    'candidate_names': ['ThomasKaffee', 'ConfidentIt'],
-    'party_names': ['Conservative Party of Canada', 'New Democratic Party'],
-    'short_name': ['CPC', 'NDP']
-  }, { 'name': 'Fraser-Columbia and the North',
-    'final_results': [675018, 557053],
-    'candidate_names': ['WonderOverYander', 'AdSea260'],
-    'party_names': ['Liberal Party of Canada', 'New Democratic Party'],
-    'short_name': ['LPC', 'NDP']
+    'final_results': [10000, 9000, 8000],
+    'candidate_names': ['CandidateA', 'CandidateB', 'CandidateC'],
+    'party_names': ['Party A', 'Party B', 'Party C'],
+    'short_name': ['P1', 'P2', 'P3']
   }
-
 ]
 
 all_parties = [
-    {'name': 'Conservative Party of Canada','short_pname':'CPC', 'color': 'blue','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
-    {'name': 'Liberal Party of Canada','short_pname':'LPC', 'color': 'red','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
-    {'name': 'New Democratic Party','short_pname':'NDP', 'color': 'orange','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
+    {'name': 'Party A','short_pname':'P1', 'color': 'blue','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
+    {'name': 'Party B','short_pname':'P2', 'color': 'red','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
+    {'name': 'Party C','short_pname':'P3', 'color': 'orange','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
     {'name': 'Independent','short_pname':'IND', 'color': 'gray','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0}
 ]
 
