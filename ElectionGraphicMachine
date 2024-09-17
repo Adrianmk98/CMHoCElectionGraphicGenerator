@@ -7,10 +7,11 @@ import random
 import matplotlib.image as mpimg
 from vote_calculations import calculate_vote_totals, determine_winner, calculate_lead_margin
 from party_utils import get_leading_party
+from MapMaker import mapmaker_main
 
 
 def update_running_tally(votes_by_riding, parties_by_riding, all_parties):
-    # Update temp_vote for each party based on the current step's votes
+    # Update temp_vote for each party based on the current step's votes. Keeps track of votes onto the current slide
     for party_name, votes in zip(parties_by_riding, votes_by_riding):
         for party in all_parties:
             if party['name'] == party_name:
@@ -31,7 +32,6 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
     # Sort ridings alphabetically by name
 
     sorted_ridings = ridings  # Keep the original order from the spreadsheet
-    winner_determined = [False] * len(sorted_ridings)  # Track winner determination for each race
     winning_candidate_indices = [-1] * len(sorted_ridings)  # -1 indicates no winner yet
     winner_determined_steps = [None] * len(sorted_ridings)  # Initialize with None for each riding
     # Initialize party colors
@@ -39,7 +39,6 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
     party_seat_counts = {party['name']: party['seats'] for party in all_parties}
     # Initialize vote totals matrix for each riding
     vote_totals_by_riding = [np.zeros((num_graphics, len(riding['final_results']))) for riding in sorted_ridings]
-    previous_leading_party = None
     # Generate random vote totals for each candidate in each riding
     seatsprocessed = 1
     for r, riding in enumerate(sorted_ridings):
@@ -57,7 +56,6 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
 
     # Include steps at increments of 2.5%
     increments = np.linspace(0, 40, num=num_graphics)
-    num_candidates = len(riding['candidate_names'])
 
     # Always include step 0 and step 40
 
@@ -77,9 +75,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
     for r, riding in enumerate(sorted_ridings):
         print(f'Starting processing for riding {riding["name"]}')
         # Track if seat counts have been updated for this riding
-        seat_counts_updated = False
         previous_leading_party=None
-        leading_party = None
 
         # Then loop through all steps for that specific riding
         for step in selected_steps:
@@ -176,8 +172,6 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
 
                     # Define text margin based on rank
                     lead_margin = calculate_lead_margin(sorted_votes, j,num_candidates_to_display)
-
-                    displayed_votes = sorted_votes[j]
 
                     percentage_of_all = (sorted_votes[j] / total_votes_step) * 100 if total_votes_step > 0 else 0
                     if num_candidates_to_display <= 2:
@@ -475,24 +469,79 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
         for party in all_parties:
             print(f"{party['name']} - Total Votes (pop_vote): {party['pop_vote']}")
 
-        print(f'Completed all graphics for riding {riding["name"]}')
+        print(f'Completed all graphics for riding {riding["short_name"]} with final results: {riding["final_results"]}')
         seatsprocessed = seatsprocessed + 1
+        if __name__ == "__main__":
+            # Define your file paths
+
+            riding_name = riding['name']
+            file_path = f'irlriding/{riding_name}.txt'
+            input_svg = f'svg/{riding_name}.svg'
+            output_dir = f'output_images'
+
+            # Collect data from ridings
+            party_names = []
+            pop_votes = []
+
+
+            party_names=riding['short_name']  # Assuming this is a list of party short names
+            pop_votes=riding['final_results']  # Flatten the list of final results
+
+            # Ensure pop_votes is a list of integers or floats
+            pop_votes = [float(vote) for vote in pop_votes]
+
+            # After the loop, call mapmaker_main with the collected data
+            mapmaker_main(file_path, input_svg, output_dir, party_names, pop_votes,riding_name)
+
         print('Processed all ridings for all steps')
 
 # Example usage
 ridings = [
-{ 'name': 'Atlantic Canada',
-    'final_results': [10000, 9000, 8000],
-    'candidate_names': ['CandidateA', 'CandidateB', 'CandidateC'],
-    'party_names': ['Party A', 'Party B', 'Party C'],
-    'short_name': ['P1', 'P2', 'P3']
+    { 'name': 'Montreal',
+    'final_results': [1002133],
+    'candidate_names': ['Model-EpicMFan'],
+    'party_names': ['New Democratic Party'],
+    'short_name': ['NDP']
+  },
+{ 'name': 'Toronto',
+    'final_results': [762046, 635132],
+    'candidate_names': ['FreedomCanada2025', 'Tyty_1234'],
+    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
+    'short_name': ['CPC', 'LPC']
+  }, { 'name': 'Golden Horseshoe',
+    'final_results': [1131801, 408861],
+    'candidate_names': ['jeninhenin', 'CosmoCosma'],
+    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
+    'short_name': ['CPC', 'LPC']
+  }, { 'name': 'Southwestern Ontario',
+    'final_results': [1041655, 308311],
+    'candidate_names': ['Hayley-182', 'Phonexia2'],
+    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
+    'short_name': ['CPC', 'LPC']
+  }, { 'name': 'Central Ontario',
+    'final_results': [934574, 556805],
+    'candidate_names': ['SettingObvious4738', 'MrWhiteyIsAwesome'],
+    'party_names': ['Liberal Party of Canada', 'New Democratic Party'],
+    'short_name': ['LPC', 'NDP']
+  }, { 'name': 'Northern and Eastern Ontario',
+    'final_results': [1108352, 144579],
+    'candidate_names': ['Trick_Bar_1439', 'redwolf177'],
+    'party_names': ['Liberal Party of Canada', 'New Democratic Party'],
+    'short_name': ['LPC', 'NDP']
+  }, { 'name': 'Prairies',
+    'final_results': [338429, 898900],
+    'candidate_names': ['Melp8836', 'SaskPoliticker'],
+    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
+    'short_name': ['CPC', 'LPC']
   }
+
 ]
 
 all_parties = [
-    {'name': 'Party A','short_pname':'P1', 'color': 'blue','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
-    {'name': 'Party B','short_pname':'P2', 'color': 'red','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
-    {'name': 'Party C','short_pname':'P3', 'color': 'orange','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
+    {'name': 'Conservative Party of Canada','short_pname':'CPC', 'color': 'blue','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
+    {'name': 'Liberal Party of Canada','short_pname':'LPC', 'color': 'red','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
+    {'name': 'New Democratic Party','short_pname':'NDP', 'color': 'orange','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
+    {'name': 'Bloc Quebecois','short_pname':'BLOC', 'color': 'turquoise','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
     {'name': 'Independent','short_pname':'IND', 'color': 'gray','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0}
 ]
 
