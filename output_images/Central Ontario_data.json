@@ -1,0 +1,362 @@
+[
+    {
+        "riding": "Richmond Hill",
+        "party": "LPC",
+        "votes": {
+            "LPC": 71.64780599021444,
+            "CPC": 0.0,
+            "NDP": 28.35219400978556,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 43.29561198042887,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Newmarket-Aurora",
+        "party": "LPC",
+        "votes": {
+            "LPC": 67.46666176099494,
+            "CPC": 0.0,
+            "NDP": 32.53333823900505,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 34.93332352198989,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Markham-Unionville",
+        "party": "LPC",
+        "votes": {
+            "LPC": 75.07064791230952,
+            "CPC": 0.0,
+            "NDP": 24.929352087690464,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 50.141295824619064,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Pickering-Uxbridge",
+        "party": "LPC",
+        "votes": {
+            "LPC": 68.71089086034125,
+            "CPC": 0.0,
+            "NDP": 31.28910913965875,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 37.4217817206825,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Markham-Thornhill",
+        "party": "LPC",
+        "votes": {
+            "LPC": 79.03255814210644,
+            "CPC": 0.0,
+            "NDP": 20.96744185789357,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 58.06511628421287,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Markham-Stouffville",
+        "party": "LPC",
+        "votes": {
+            "LPC": 75.98386306413923,
+            "CPC": 0.0,
+            "NDP": 24.01613693586076,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 51.96772612827847,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Ajax",
+        "party": "LPC",
+        "votes": {
+            "LPC": 72.06811833064734,
+            "CPC": 0.0,
+            "NDP": 27.93188166935266,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 44.136236661294674,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Haliburton-Kawartha Lakes-Brock",
+        "party": "NDP",
+        "votes": {
+            "LPC": 47.445871854403286,
+            "CPC": 0.0,
+            "NDP": 52.5541281455967,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 5.108256291193413,
+        "fill_color": "#ffc04c"
+    },
+    {
+        "riding": "Bay of Quinte",
+        "party": "LPC",
+        "votes": {
+            "LPC": 56.034564977001835,
+            "CPC": 0.0,
+            "NDP": 43.96543502299818,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 12.069129954003657,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Durham",
+        "party": "NDP",
+        "votes": {
+            "LPC": 47.68677528303367,
+            "CPC": 0.0,
+            "NDP": 52.31322471696633,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 4.626449433932663,
+        "fill_color": "#ffd27f"
+    },
+    {
+        "riding": "Vaughan-Woodbridge",
+        "party": "LPC",
+        "votes": {
+            "LPC": 77.34369390550474,
+            "CPC": 0.0,
+            "NDP": 22.65630609449527,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 54.687387811009465,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Barrie-Springwater-Oro-Medonte",
+        "party": "LPC",
+        "votes": {
+            "LPC": 51.92757695537548,
+            "CPC": 0.0,
+            "NDP": 48.07242304462452,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 3.855153910750957,
+        "fill_color": "#ff7f7f"
+    },
+    {
+        "riding": "Barrie-Innisfil",
+        "party": "NDP",
+        "votes": {
+            "LPC": 47.86015778952964,
+            "CPC": 0.0,
+            "NDP": 52.139842210470356,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 4.279684420940718,
+        "fill_color": "#ffd27f"
+    },
+    {
+        "riding": "Aurora-Oak Ridges-Richmond Hill",
+        "party": "LPC",
+        "votes": {
+            "LPC": 75.2813764976649,
+            "CPC": 0.0,
+            "NDP": 24.71862350233511,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 50.56275299532979,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Whitby",
+        "party": "LPC",
+        "votes": {
+            "LPC": 61.529882219209185,
+            "CPC": 0.0,
+            "NDP": 38.47011778079081,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 23.059764438418377,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Peterborough-Kawartha",
+        "party": "LPC",
+        "votes": {
+            "LPC": 54.16070116717498,
+            "CPC": 0.0,
+            "NDP": 45.83929883282502,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 8.321402334349955,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Thornhill",
+        "party": "LPC",
+        "votes": {
+            "LPC": 72.97048906300803,
+            "CPC": 0.0,
+            "NDP": 27.02951093699196,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 45.94097812601607,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Parry Sound-Muskoka",
+        "party": "LPC",
+        "votes": {
+            "LPC": 57.10665960988685,
+            "CPC": 0.0,
+            "NDP": 42.89334039011315,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 14.213319219773695,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Hastings-Lennox and Addington",
+        "party": "LPC",
+        "votes": {
+            "LPC": 61.63699741549363,
+            "CPC": 0.0,
+            "NDP": 38.36300258450637,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 23.273994830987263,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Oshawa",
+        "party": "NDP",
+        "votes": {
+            "LPC": 42.25193026432247,
+            "CPC": 0.0,
+            "NDP": 57.74806973567753,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 15.496139471355065,
+        "fill_color": "#ffc04c"
+    },
+    {
+        "riding": "King-Vaughan",
+        "party": "LPC",
+        "votes": {
+            "LPC": 77.99903137443332,
+            "CPC": 0.0,
+            "NDP": 22.0009686255667,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 55.998062748866616,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "York-Simcoe",
+        "party": "LPC",
+        "votes": {
+            "LPC": 62.4387907817322,
+            "CPC": 0.0,
+            "NDP": 37.5612092182678,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 24.877581563464403,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Simcoe North",
+        "party": "LPC",
+        "votes": {
+            "LPC": 52.08479336563998,
+            "CPC": 0.0,
+            "NDP": 47.91520663436001,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 4.169586731279971,
+        "fill_color": "#ff7f7f"
+    },
+    {
+        "riding": "Simcoe-Grey",
+        "party": "LPC",
+        "votes": {
+            "LPC": 50.425162365090785,
+            "CPC": 0.0,
+            "NDP": 49.57483763490922,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 0.850324730181562,
+        "fill_color": "#ff7f7f"
+    }
+]

@@ -1,0 +1,377 @@
+[
+    {
+        "riding": "Kenora",
+        "party": "LPC",
+        "votes": {
+            "LPC": 81.60914549033929,
+            "CPC": 0.0,
+            "NDP": 18.390854509660727,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 63.21829098067856,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Timmins-James Bay",
+        "party": "LPC",
+        "votes": {
+            "LPC": 76.57444643107279,
+            "CPC": 0.0,
+            "NDP": 23.425553568927217,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 53.14889286214557,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Thunder Bay-Superior North",
+        "party": "LPC",
+        "votes": {
+            "LPC": 84.53968307800956,
+            "CPC": 0.0,
+            "NDP": 15.460316921990453,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 69.0793661560191,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Thunder Bay-Rainy River",
+        "party": "LPC",
+        "votes": {
+            "LPC": 81.71700521909163,
+            "CPC": 0.0,
+            "NDP": 18.282994780908364,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 63.434010438183265,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Nickel Belt",
+        "party": "LPC",
+        "votes": {
+            "LPC": 83.66485603412656,
+            "CPC": 0.0,
+            "NDP": 16.33514396587344,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 67.32971206825312,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Nipissing-Timiskaming",
+        "party": "LPC",
+        "votes": {
+            "LPC": 89.0437512698873,
+            "CPC": 0.0,
+            "NDP": 10.95624873011269,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 78.0875025397746,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Parry Sound-Muskoka",
+        "party": "LPC",
+        "votes": {
+            "LPC": 90.45656913715527,
+            "CPC": 0.0,
+            "NDP": 9.543430862844723,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 80.91313827431054,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Renfrew-Nipissing-Pembroke",
+        "party": "LPC",
+        "votes": {
+            "LPC": 88.5571828863585,
+            "CPC": 0.0,
+            "NDP": 11.44281711364151,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 77.114365772717,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Hastings-Lennox and Addington",
+        "party": "LPC",
+        "votes": {
+            "LPC": 92.14308360583297,
+            "CPC": 0.0,
+            "NDP": 7.856916394167018,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 84.28616721166595,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Lanark-Frontenac-Kingston",
+        "party": "LPC",
+        "votes": {
+            "LPC": 87.83832307805449,
+            "CPC": 0.0,
+            "NDP": 12.161676921945523,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 75.67664615610896,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Sault Ste. Marie",
+        "party": "LPC",
+        "votes": {
+            "LPC": 82.21199591129358,
+            "CPC": 0.0,
+            "NDP": 17.788004088706412,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 64.42399182258717,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Leeds-Grenville-Thousand Islands and Rideau Lakes",
+        "party": "LPC",
+        "votes": {
+            "LPC": 88.82611380924963,
+            "CPC": 0.0,
+            "NDP": 11.173886190750364,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 77.65222761849927,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Glengarry-Prescott-Russell",
+        "party": "LPC",
+        "votes": {
+            "LPC": 95.00760651736468,
+            "CPC": 0.0,
+            "NDP": 4.99239348263533,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 90.01521303472934,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Stormont-Dundas-South Glengarry",
+        "party": "LPC",
+        "votes": {
+            "LPC": 92.69244749682254,
+            "CPC": 0.0,
+            "NDP": 7.30755250317745,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 85.38489499364509,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Carleton",
+        "party": "LPC",
+        "votes": {
+            "LPC": 94.54021377394672,
+            "CPC": 0.0,
+            "NDP": 5.45978622605329,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 89.08042754789342,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Sudbury",
+        "party": "LPC",
+        "votes": {
+            "LPC": 84.13009903842446,
+            "CPC": 0.0,
+            "NDP": 15.869900961575551,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 68.26019807684891,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Kanata-Carleton",
+        "party": "LPC",
+        "votes": {
+            "LPC": 93.59739838490697,
+            "CPC": 0.0,
+            "NDP": 6.402601615093043,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 87.19479676981392,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Algoma-Manitoulin-Kapuskasing",
+        "party": "LPC",
+        "votes": {
+            "LPC": 71.1190026093093,
+            "CPC": 0.0,
+            "NDP": 28.8809973906907,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 42.23800521861861,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Orleans",
+        "party": "LPC",
+        "votes": {
+            "LPC": 95.17686912089138,
+            "CPC": 0.0,
+            "NDP": 4.823130879108619,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 90.35373824178276,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Nepean",
+        "party": "LPC",
+        "votes": {
+            "LPC": 93.66570085447312,
+            "CPC": 0.0,
+            "NDP": 6.334299145526888,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 87.33140170894623,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Ottawa South",
+        "party": "LPC",
+        "votes": {
+            "LPC": 93.28541669835472,
+            "CPC": 0.0,
+            "NDP": 6.714583301645282,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 86.57083339670945,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Ottawa West-Nepean",
+        "party": "LPC",
+        "votes": {
+            "LPC": 91.07356096370496,
+            "CPC": 0.0,
+            "NDP": 8.926439036295022,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 82.14712192740994,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Ottawa-Vanier",
+        "party": "LPC",
+        "votes": {
+            "LPC": 91.03751117658959,
+            "CPC": 0.0,
+            "NDP": 8.962488823410414,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 82.07502235317918,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Ottawa Centre",
+        "party": "LPC",
+        "votes": {
+            "LPC": 87.50305643168711,
+            "CPC": 0.0,
+            "NDP": 12.496943568312876,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 75.00611286337424,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Kingston and the Islands",
+        "party": "LPC",
+        "votes": {
+            "LPC": 89.23237436301035,
+            "CPC": 0.0,
+            "NDP": 10.767625636989656,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 78.4647487260207,
+        "fill_color": "#ff0000"
+    }
+]

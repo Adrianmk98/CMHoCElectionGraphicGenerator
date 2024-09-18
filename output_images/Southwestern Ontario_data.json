@@ -1,0 +1,377 @@
+[
+    {
+        "riding": "Sarnia-Lambton",
+        "party": "CPC",
+        "votes": {
+            "LPC": 12.81883714680528,
+            "CPC": 87.18116285319472,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 74.36232570638944,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Elgin-Middlesex-London",
+        "party": "CPC",
+        "votes": {
+            "LPC": 13.902951584645526,
+            "CPC": 86.09704841535448,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 72.19409683070896,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Waterloo",
+        "party": "CPC",
+        "votes": {
+            "LPC": 40.990947271630546,
+            "CPC": 59.00905272836946,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 18.018105456738915,
+        "fill_color": "#4c4cff"
+    },
+    {
+        "riding": "Wellington-Halton Hills",
+        "party": "CPC",
+        "votes": {
+            "LPC": 17.288959089541333,
+            "CPC": 82.71104091045866,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 65.42208182091733,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Kitchener Centre",
+        "party": "CPC",
+        "votes": {
+            "LPC": 34.95038048771754,
+            "CPC": 65.04961951228245,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 30.09923902456491,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Cambridge",
+        "party": "CPC",
+        "votes": {
+            "LPC": 31.545104390365854,
+            "CPC": 68.45489560963416,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 36.909791219268314,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Haldimand-Norfolk",
+        "party": "CPC",
+        "votes": {
+            "LPC": 15.571989146060561,
+            "CPC": 84.42801085393944,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 68.85602170787888,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "London West",
+        "party": "CPC",
+        "votes": {
+            "LPC": 34.92251505392661,
+            "CPC": 65.07748494607338,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 30.154969892146774,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "London West",
+        "party": "CPC",
+        "votes": {
+            "LPC": 34.92251505392661,
+            "CPC": 65.07748494607338,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 30.154969892146774,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Dufferin-Caledon",
+        "party": "CPC",
+        "votes": {
+            "LPC": 21.50870755153272,
+            "CPC": 78.49129244846729,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 56.98258489693457,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Windsor-Tecumseh",
+        "party": "CPC",
+        "votes": {
+            "LPC": 29.66532219774713,
+            "CPC": 70.33467780225287,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 40.66935560450574,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Oxford",
+        "party": "CPC",
+        "votes": {
+            "LPC": 12.284754574822472,
+            "CPC": 87.71524542517753,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 75.43049085035506,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Essex",
+        "party": "CPC",
+        "votes": {
+            "LPC": 13.861077974069296,
+            "CPC": 86.13892202593071,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 72.27784405186142,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Lambton-Kent-Middlesex",
+        "party": "CPC",
+        "votes": {
+            "LPC": 15.338374128030118,
+            "CPC": 84.66162587196987,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 69.32325174393975,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Kitchener South-Hespeler",
+        "party": "CPC",
+        "votes": {
+            "LPC": 29.601120255181662,
+            "CPC": 70.39887974481834,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 40.79775948963668,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Kitchener-Conestoga",
+        "party": "CPC",
+        "votes": {
+            "LPC": 26.29854824492194,
+            "CPC": 73.70145175507807,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 47.40290351015613,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Perth-Wellington",
+        "party": "CPC",
+        "votes": {
+            "LPC": 17.682561664204616,
+            "CPC": 82.31743833579537,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 64.63487667159076,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "London North Centre",
+        "party": "CPC",
+        "votes": {
+            "LPC": 38.62992865139444,
+            "CPC": 61.37007134860557,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 22.740142697211134,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Chatham-Kent-Leamington",
+        "party": "CPC",
+        "votes": {
+            "LPC": 15.249946650331648,
+            "CPC": 84.75005334966835,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 69.5001066993367,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Chatham-Kent-Leamington",
+        "party": "CPC",
+        "votes": {
+            "LPC": 15.249946650331648,
+            "CPC": 84.75005334966835,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 69.5001066993367,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "London-Fanshawe",
+        "party": "CPC",
+        "votes": {
+            "LPC": 27.500100860557104,
+            "CPC": 72.49989913944289,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 44.999798278885784,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Huron-Bruce",
+        "party": "CPC",
+        "votes": {
+            "LPC": 16.4871622655243,
+            "CPC": 83.5128377344757,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 67.02567546895139,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Bruce-Grey-Owen Sound",
+        "party": "CPC",
+        "votes": {
+            "LPC": 13.376497321150286,
+            "CPC": 86.62350267884973,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 73.24700535769945,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Brantford-Brant",
+        "party": "CPC",
+        "votes": {
+            "LPC": 21.118745744992808,
+            "CPC": 78.88125425500719,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 57.762508510014385,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Windsor West",
+        "party": "CPC",
+        "votes": {
+            "LPC": 40.10514436539828,
+            "CPC": 59.894855634601704,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 19.789711269203423,
+        "fill_color": "#4c4cff"
+    }
+]

@@ -1,0 +1,392 @@
+[
+    {
+        "riding": "Niagara Centre",
+        "party": "CPC",
+        "votes": {
+            "LPC": 22.167004065505417,
+            "CPC": 77.83299593449459,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 55.665991868989174,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "St. Catharines",
+        "party": "CPC",
+        "votes": {
+            "LPC": 24.19183598199133,
+            "CPC": 75.80816401800867,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 51.616328036017336,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Flamborough-Glanbrook",
+        "party": "CPC",
+        "votes": {
+            "LPC": 19.777163241294268,
+            "CPC": 80.22283675870572,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 60.44567351741146,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Hamilton Mountain",
+        "party": "CPC",
+        "votes": {
+            "LPC": 23.11850989955935,
+            "CPC": 76.88149010044064,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 53.762980200881294,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Hamilton East-Stoney Creek",
+        "party": "CPC",
+        "votes": {
+            "LPC": 27.88271942495721,
+            "CPC": 72.1172805750428,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 44.23456115008559,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Hamilton Centre",
+        "party": "CPC",
+        "votes": {
+            "LPC": 33.37323054479743,
+            "CPC": 66.62676945520258,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 33.25353891040515,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Mississauga-Erin Mills",
+        "party": "CPC",
+        "votes": {
+            "LPC": 29.014662287981462,
+            "CPC": 70.98533771201855,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 41.97067542403708,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Mississauga East-Cooksville",
+        "party": "CPC",
+        "votes": {
+            "LPC": 28.46917118989971,
+            "CPC": 71.53082881010029,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 43.06165762020058,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Mississauga Centre",
+        "party": "CPC",
+        "votes": {
+            "LPC": 32.11200945821178,
+            "CPC": 67.88799054178823,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 35.77598108357645,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Milton",
+        "party": "CPC",
+        "votes": {
+            "LPC": 26.402586218090214,
+            "CPC": 73.5974137819098,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 47.19482756381958,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Mississauga East-Cooksville",
+        "party": "CPC",
+        "votes": {
+            "LPC": 28.46917118989971,
+            "CPC": 71.53082881010029,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 43.06165762020058,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Wellington-Halton Hills",
+        "party": "CPC",
+        "votes": {
+            "LPC": 13.054252275450684,
+            "CPC": 86.94574772454932,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 73.89149544909864,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Oakville",
+        "party": "CPC",
+        "votes": {
+            "LPC": 23.148355887668938,
+            "CPC": 76.85164411233106,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 53.70328822466212,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Burlington",
+        "party": "CPC",
+        "votes": {
+            "LPC": 26.96887025691001,
+            "CPC": 73.03112974308999,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 46.06225948617998,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Hamilton West-Ancaster-Dundas",
+        "party": "CPC",
+        "votes": {
+            "LPC": 30.466027319449534,
+            "CPC": 69.53397268055046,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 39.067945361100925,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Brampton North",
+        "party": "CPC",
+        "votes": {
+            "LPC": 34.82168687357837,
+            "CPC": 65.17831312642163,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 30.356626252843256,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Oakville North-Burlington",
+        "party": "CPC",
+        "votes": {
+            "LPC": 24.117131021148523,
+            "CPC": 75.88286897885148,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 51.76573795770295,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Brampton East",
+        "party": "CPC",
+        "votes": {
+            "LPC": 42.41789382249214,
+            "CPC": 57.58210617750785,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 15.164212355015714,
+        "fill_color": "#4c4cff"
+    },
+    {
+        "riding": "Brampton Centre",
+        "party": "CPC",
+        "votes": {
+            "LPC": 30.671040761888207,
+            "CPC": 69.32895923811179,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 38.657918476223585,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Mississauga-Streetsville",
+        "party": "CPC",
+        "votes": {
+            "LPC": 27.67509421662526,
+            "CPC": 72.32490578337473,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 44.64981156674947,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Mississauga-Malton",
+        "party": "CPC",
+        "votes": {
+            "LPC": 35.8437327351699,
+            "CPC": 64.1562672648301,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 28.312534529660205,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Brampton West",
+        "party": "CPC",
+        "votes": {
+            "LPC": 32.3174175473947,
+            "CPC": 67.6825824526053,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 35.365164905210605,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Mississauga-Lakeshore",
+        "party": "CPC",
+        "votes": {
+            "LPC": 24.543991700139298,
+            "CPC": 75.45600829986071,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 50.91201659972141,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Brampton South",
+        "party": "CPC",
+        "votes": {
+            "LPC": 31.42853418965339,
+            "CPC": 68.57146581034662,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 37.14293162069323,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Niagara West",
+        "party": "CPC",
+        "votes": {
+            "LPC": 13.166132457250356,
+            "CPC": 86.83386754274964,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 73.66773508549929,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Niagara Falls",
+        "party": "CPC",
+        "votes": {
+            "LPC": 23.735456435725013,
+            "CPC": 76.26454356427499,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 52.529087128549975,
+        "fill_color": "#0000ff"
+    }
+]

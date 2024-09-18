@@ -1,0 +1,272 @@
+[
+    {
+        "riding": "Lac-Saint-Louis",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "La Pointe-de-l'Ile",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Dorval-Lachine-LaSalle",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Saint-Laurent",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Honore-Mercier",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Pierrefonds-Dollard",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Ahuntsic-Cartierville",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Mount Royal",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Hochelaga",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Saint-Leonard-Saint-Michel",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "LaSalle-Emard-Verdun",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Bourassa",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Notre-Dame-de-Grace-Westmount",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Outremont",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Rosemont-La Petite-Patrie",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Laurier-Sainte-Marie",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Papineau",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Ville-Marie-Le Sud-Ouest-Ile-des-Soeurs",
+        "party": "NDP",
+        "votes": {
+            "LPC": 0.0,
+            "CPC": 0.0,
+            "NDP": 100.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 100.0,
+        "fill_color": "#ffa500"
+    }
+]
