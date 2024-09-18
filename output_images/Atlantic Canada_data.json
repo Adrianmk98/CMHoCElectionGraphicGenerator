@@ -1,0 +1,482 @@
+[
+    {
+        "riding": "Charlottetown",
+        "party": "NDP",
+        "votes": {
+            "LPC": 40.11349593749204,
+            "CPC": 15.725925079241707,
+            "NDP": 44.16057898326626,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 4.047083045774222,
+        "fill_color": "#ffd27f"
+    },
+    {
+        "riding": "Malpeque",
+        "party": "LPC",
+        "votes": {
+            "LPC": 46.37771047428833,
+            "CPC": 18.315321041178983,
+            "NDP": 35.30696848453269,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 11.07074198975564,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Egmont",
+        "party": "LPC",
+        "votes": {
+            "LPC": 46.54615093862707,
+            "CPC": 24.827412694510883,
+            "NDP": 28.626436366862045,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 17.919714571765027,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Cardigan",
+        "party": "LPC",
+        "votes": {
+            "LPC": 47.844222500782884,
+            "CPC": 23.987962566032884,
+            "NDP": 28.167814933184243,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 19.67640756759864,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "St. John's South-Mount Pearl",
+        "party": "NDP",
+        "votes": {
+            "LPC": 27.845176880557183,
+            "CPC": 8.875306444904387,
+            "NDP": 63.27951667453843,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 35.434339793981245,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "St. John's East",
+        "party": "NDP",
+        "votes": {
+            "LPC": 13.346159213966432,
+            "CPC": 6.180371539962646,
+            "NDP": 80.47346924607093,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 67.1273100321045,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Halifax West",
+        "party": "NDP",
+        "votes": {
+            "LPC": 32.3648179559244,
+            "CPC": 15.339631974959063,
+            "NDP": 52.29555006911654,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 19.930732113192136,
+        "fill_color": "#ffc04c"
+    },
+    {
+        "riding": "Halifax",
+        "party": "NDP",
+        "votes": {
+            "LPC": 10.825014079435286,
+            "CPC": 5.817171597620419,
+            "NDP": 83.3578143229443,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 72.532800243509,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Dartmouth-Cole Harbour",
+        "party": "NDP",
+        "votes": {
+            "LPC": 20.236112655492835,
+            "CPC": 13.629245189176034,
+            "NDP": 66.13464215533112,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 45.89852949983829,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Sackville-Preston-Chezzetcook",
+        "party": "NDP",
+        "votes": {
+            "LPC": 38.67749078176262,
+            "CPC": 18.929958037609502,
+            "NDP": 42.39255118062788,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 3.715060398865262,
+        "fill_color": "#ffd27f"
+    },
+    {
+        "riding": "Labrador",
+        "party": "NDP",
+        "votes": {
+            "LPC": 24.337840399469943,
+            "CPC": 15.248041200150075,
+            "NDP": 60.41411840037999,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 36.07627800091005,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Long Range Mountains",
+        "party": "NDP",
+        "votes": {
+            "LPC": 30.393972153353708,
+            "CPC": 15.41392872333349,
+            "NDP": 54.1920991233128,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 23.798126969959092,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Madawaska-Restigouche",
+        "party": "LPC",
+        "votes": {
+            "LPC": 48.77512239146814,
+            "CPC": 23.43855221446134,
+            "NDP": 27.786325394070527,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 20.98879699739761,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Avalon",
+        "party": "NDP",
+        "votes": {
+            "LPC": 31.242591903790245,
+            "CPC": 17.845372419486548,
+            "NDP": 50.912035676723214,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 19.66944377293297,
+        "fill_color": "#ffc04c"
+    },
+    {
+        "riding": "Coast of Bays-Central-Notre Dame",
+        "party": "NDP",
+        "votes": {
+            "LPC": 36.83466783226932,
+            "CPC": 23.043893740952583,
+            "NDP": 40.12143842677809,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 3.2867705945087735,
+        "fill_color": "#ffd27f"
+    },
+    {
+        "riding": "Miramichi-Grand Lake",
+        "party": "LPC",
+        "votes": {
+            "LPC": 35.91418939590711,
+            "CPC": 29.511143589345735,
+            "NDP": 34.574667014747156,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 1.3395223811599521,
+        "fill_color": "#ff7f7f"
+    },
+    {
+        "riding": "Tobique-Mactaquac",
+        "party": "CPC",
+        "votes": {
+            "LPC": 24.77135695825448,
+            "CPC": 42.08211749289247,
+            "NDP": 33.14652554885305,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 8.935591944039423,
+        "fill_color": "#4c4cff"
+    },
+    {
+        "riding": "West Nova",
+        "party": "NDP",
+        "votes": {
+            "LPC": 29.26748090557063,
+            "CPC": 31.1854698260011,
+            "NDP": 39.547049268428275,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 8.361579442427175,
+        "fill_color": "#ffc04c"
+    },
+    {
+        "riding": "New Brunswick Southwest",
+        "party": "CPC",
+        "votes": {
+            "LPC": 24.9494471201616,
+            "CPC": 40.80562452848775,
+            "NDP": 34.24492835135066,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 6.560696177137089,
+        "fill_color": "#4c4cff"
+    },
+    {
+        "riding": "Central Nova",
+        "party": "NDP",
+        "votes": {
+            "LPC": 24.275823135500055,
+            "CPC": 27.4935292710956,
+            "NDP": 48.23064759340434,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 20.737118322308742,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "South Shore-St. Margarets",
+        "party": "NDP",
+        "votes": {
+            "LPC": 18.588630456867353,
+            "CPC": 26.680836516946098,
+            "NDP": 54.73053302618654,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 28.049696509240444,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Cumberland-Colchester",
+        "party": "NDP",
+        "votes": {
+            "LPC": 22.83549981719812,
+            "CPC": 28.261888631763295,
+            "NDP": 48.902611551038596,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 20.6407229192753,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Fundy Royal",
+        "party": "NDP",
+        "votes": {
+            "LPC": 23.869761523808524,
+            "CPC": 36.57493160551583,
+            "NDP": 39.55530687067564,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 2.9803752651598145,
+        "fill_color": "#ffd27f"
+    },
+    {
+        "riding": "Kings-Hants",
+        "party": "NDP",
+        "votes": {
+            "LPC": 33.21571934794762,
+            "CPC": 22.39298505611103,
+            "NDP": 44.39129559594136,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 11.175576247993739,
+        "fill_color": "#ffc04c"
+    },
+    {
+        "riding": "Sydney-Victoria",
+        "party": "NDP",
+        "votes": {
+            "LPC": 27.783764994611293,
+            "CPC": 14.622861631619658,
+            "NDP": 57.593373373769055,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 29.809608379157762,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Beausejour",
+        "party": "LPC",
+        "votes": {
+            "LPC": 50.21126352476115,
+            "CPC": 16.14279220431715,
+            "NDP": 33.6459442709217,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 16.565319253839448,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Cape Breton-Canso",
+        "party": "NDP",
+        "votes": {
+            "LPC": 27.97843847915324,
+            "CPC": 18.816505185501207,
+            "NDP": 53.20505633534557,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 25.226617856192327,
+        "fill_color": "#ffa500"
+    },
+    {
+        "riding": "Fredericton",
+        "party": "LPC",
+        "votes": {
+            "LPC": 34.41456702298097,
+            "CPC": 33.30104356001053,
+            "NDP": 32.2843894170085,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 1.1135234629704414,
+        "fill_color": "#ff7f7f"
+    },
+    {
+        "riding": "Saint John-Rothesay",
+        "party": "NDP",
+        "votes": {
+            "LPC": 31.60010564883045,
+            "CPC": 24.401338003971883,
+            "NDP": 43.99855634719766,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 12.398450698367213,
+        "fill_color": "#ffc04c"
+    },
+    {
+        "riding": "Moncton-Riverview-Dieppe",
+        "party": "NDP",
+        "votes": {
+            "LPC": 37.745905604302024,
+            "CPC": 17.562980166111352,
+            "NDP": 44.691114229586624,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 6.9452086252846,
+        "fill_color": "#ffc04c"
+    },
+    {
+        "riding": "Bonavista-Burin-Trinity",
+        "party": "NDP",
+        "votes": {
+            "LPC": 35.026639906322174,
+            "CPC": 25.715629764293823,
+            "NDP": 39.257730329384,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 4.231090423061829,
+        "fill_color": "#ffd27f"
+    },
+    {
+        "riding": "Acadie-Bathurst",
+        "party": "NDP",
+        "votes": {
+            "LPC": 40.73827470455861,
+            "CPC": 13.502285438670752,
+            "NDP": 45.75943985677063,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 5.021165152212021,
+        "fill_color": "#ffc04c"
+    }
+]

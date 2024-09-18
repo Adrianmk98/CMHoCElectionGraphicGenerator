@@ -1,0 +1,422 @@
+[
+    {
+        "riding": "Desnethe-Missinippi-Churchill River",
+        "party": "LPC",
+        "votes": {
+            "LPC": 82.80383920249417,
+            "CPC": 17.19616079750581,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 65.60767840498836,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Souris-Moose Mountain",
+        "party": "CPC",
+        "votes": {
+            "LPC": 26.831228943010053,
+            "CPC": 73.16877105698994,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 46.337542113979886,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Yorkton-Melville",
+        "party": "CPC",
+        "votes": {
+            "LPC": 38.33477012313553,
+            "CPC": 61.66522987686446,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 23.33045975372893,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Moose Jaw-Lake Centre-Lanigan",
+        "party": "CPC",
+        "votes": {
+            "LPC": 36.8334954639475,
+            "CPC": 63.1665045360525,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 26.333009072105,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Carlton Trail-Eagle Creek",
+        "party": "CPC",
+        "votes": {
+            "LPC": 30.61440437189557,
+            "CPC": 69.38559562810444,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 38.771191256208866,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Prince Albert",
+        "party": "LPC",
+        "votes": {
+            "LPC": 52.85703218343374,
+            "CPC": 47.14296781656626,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 5.7140643668674755,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Regina-Qu'Appelle",
+        "party": "LPC",
+        "votes": {
+            "LPC": 57.2484803093347,
+            "CPC": 42.751519690665305,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 14.496960618669398,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Brandon-Souris",
+        "party": "LPC",
+        "votes": {
+            "LPC": 58.98980015500879,
+            "CPC": 41.010199844991206,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 17.97960031001758,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Dauphin-Swan River-Neepawa",
+        "party": "LPC",
+        "votes": {
+            "LPC": 60.70502419201337,
+            "CPC": 39.29497580798663,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 21.410048384026737,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Portage-Lisgar",
+        "party": "LPC",
+        "votes": {
+            "LPC": 53.21909255533328,
+            "CPC": 46.78090744466672,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 6.438185110666566,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Provencher",
+        "party": "LPC",
+        "votes": {
+            "LPC": 59.86174323186162,
+            "CPC": 40.13825676813838,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 19.723486463723233,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Churchill-Keewatinook Aski",
+        "party": "LPC",
+        "votes": {
+            "LPC": 89.30154471178139,
+            "CPC": 10.6984552882186,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 78.60308942356279,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Selkirk-Interlake-Eastman",
+        "party": "LPC",
+        "votes": {
+            "LPC": 59.05718240340261,
+            "CPC": 40.9428175965974,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 18.114364806805206,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Regina-Wascana",
+        "party": "LPC",
+        "votes": {
+            "LPC": 83.60233900953543,
+            "CPC": 16.39766099046458,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 67.20467801907085,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Regina-Lewvan",
+        "party": "LPC",
+        "votes": {
+            "LPC": 64.97462953779714,
+            "CPC": 35.025370462202865,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 29.949259075594277,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Charleswood-St. James-Assiniboia-Headingley",
+        "party": "LPC",
+        "votes": {
+            "LPC": 86.78248439370083,
+            "CPC": 13.217515606299171,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 73.56496878740165,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Kildonan-St. Paul",
+        "party": "LPC",
+        "votes": {
+            "LPC": 82.34286300049743,
+            "CPC": 17.65713699950258,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 64.68572600099485,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Winnipeg South",
+        "party": "LPC",
+        "votes": {
+            "LPC": 89.1194972424589,
+            "CPC": 10.880502757541096,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 78.23899448491781,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Saint Boniface-Saint Vital",
+        "party": "LPC",
+        "votes": {
+            "LPC": 90.78952116331469,
+            "CPC": 9.210478836685317,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 81.57904232662938,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Elmwood-Transcona",
+        "party": "LPC",
+        "votes": {
+            "LPC": 70.78414615039584,
+            "CPC": 29.21585384960415,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 41.56829230079169,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Winnipeg South Centre",
+        "party": "LPC",
+        "votes": {
+            "LPC": 91.96770272426193,
+            "CPC": 8.032297275738074,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 83.93540544852385,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Winnipeg North",
+        "party": "LPC",
+        "votes": {
+            "LPC": 94.40910977729358,
+            "CPC": 5.590890222706427,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 88.81821955458716,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Winnipeg Centre",
+        "party": "LPC",
+        "votes": {
+            "LPC": 93.4056316423846,
+            "CPC": 6.594368357615387,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 86.81126328476921,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Saskatoon-Grasswood",
+        "party": "LPC",
+        "votes": {
+            "LPC": 70.37623681673645,
+            "CPC": 29.623763183263563,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 40.75247363347289,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Saskatoon West",
+        "party": "LPC",
+        "votes": {
+            "LPC": 52.99890107345788,
+            "CPC": 47.00109892654212,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 5.99780214691576,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Saskatoon-University",
+        "party": "LPC",
+        "votes": {
+            "LPC": 65.23377932465864,
+            "CPC": 34.766220675341344,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 30.467558649317297,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Cypress Hills-Grasslands",
+        "party": "CPC",
+        "votes": {
+            "LPC": 27.596811807481895,
+            "CPC": 72.40318819251812,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 44.80637638503622,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Battlefords-Lloydminster",
+        "party": "CPC",
+        "votes": {
+            "LPC": 37.57750685566686,
+            "CPC": 62.422493144333146,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 24.844986288666284,
+        "fill_color": "#0000ff"
+    }
+]

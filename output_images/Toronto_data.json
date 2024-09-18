@@ -1,0 +1,377 @@
+[
+    {
+        "riding": "Scarborough-Agincourt",
+        "party": "CPC",
+        "votes": {
+            "LPC": 32.581930778446925,
+            "CPC": 67.41806922155308,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 34.83613844310616,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "University-Rosedale",
+        "party": "LPC",
+        "votes": {
+            "LPC": 52.700487969073585,
+            "CPC": 47.29951203092641,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 5.400975938147177,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Toronto-St. Paul's",
+        "party": "CPC",
+        "votes": {
+            "LPC": 47.80506698566721,
+            "CPC": 52.19493301433279,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 4.38986602866558,
+        "fill_color": "#7f7fff"
+    },
+    {
+        "riding": "Etobicoke-Lakeshore",
+        "party": "CPC",
+        "votes": {
+            "LPC": 39.06443572927176,
+            "CPC": 60.935564270728236,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 21.87112854145648,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Don Valley North",
+        "party": "CPC",
+        "votes": {
+            "LPC": 33.50797228469434,
+            "CPC": 66.49202771530565,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 32.98405543061131,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Willowdale",
+        "party": "CPC",
+        "votes": {
+            "LPC": 32.665502651663694,
+            "CPC": 67.3344973483363,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 34.668994696672605,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Scarborough-Guildwood",
+        "party": "CPC",
+        "votes": {
+            "LPC": 49.27113916603262,
+            "CPC": 50.72886083396738,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 1.4577216679347629,
+        "fill_color": "#7f7fff"
+    },
+    {
+        "riding": "York Centre",
+        "party": "CPC",
+        "votes": {
+            "LPC": 37.149171945742374,
+            "CPC": 62.850828054257626,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 25.70165610851525,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Scarborough Centre",
+        "party": "CPC",
+        "votes": {
+            "LPC": 46.84790920889261,
+            "CPC": 53.15209079110738,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 6.304181582214774,
+        "fill_color": "#4c4cff"
+    },
+    {
+        "riding": "Etobicoke-Lakeshore",
+        "party": "CPC",
+        "votes": {
+            "LPC": 39.06443572927176,
+            "CPC": 60.935564270728236,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 21.87112854145648,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Etobicoke North",
+        "party": "CPC",
+        "votes": {
+            "LPC": 49.80123051635326,
+            "CPC": 50.19876948364674,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 0.39753896729348526,
+        "fill_color": "#7f7fff"
+    },
+    {
+        "riding": "Etobicoke Centre",
+        "party": "CPC",
+        "votes": {
+            "LPC": 34.873220996920416,
+            "CPC": 65.12677900307958,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 30.25355800615916,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Toronto-Danforth",
+        "party": "LPC",
+        "votes": {
+            "LPC": 61.62888486984331,
+            "CPC": 38.371115130156696,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 23.257769739686616,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Parkdale-High Park",
+        "party": "LPC",
+        "votes": {
+            "LPC": 56.03801798859676,
+            "CPC": 43.96198201140324,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 12.076035977193527,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Toronto Centre",
+        "party": "LPC",
+        "votes": {
+            "LPC": 62.91765424091235,
+            "CPC": 37.08234575908765,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 25.835308481824697,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Don Valley West",
+        "party": "CPC",
+        "votes": {
+            "LPC": 38.893502274204266,
+            "CPC": 61.10649772579574,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 22.212995451591475,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Humber River-Black Creek",
+        "party": "LPC",
+        "votes": {
+            "LPC": 57.27778238321356,
+            "CPC": 42.722217616786445,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 14.555564766427118,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Don Valley East",
+        "party": "CPC",
+        "votes": {
+            "LPC": 47.08144982225863,
+            "CPC": 52.91855017774139,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 5.837100355482761,
+        "fill_color": "#4c4cff"
+    },
+    {
+        "riding": "Davenport",
+        "party": "LPC",
+        "votes": {
+            "LPC": 61.89611090732418,
+            "CPC": 38.103889092675814,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 23.792221814648364,
+        "fill_color": "#ff0000"
+    },
+    {
+        "riding": "Scarborough Southwest",
+        "party": "CPC",
+        "votes": {
+            "LPC": 49.58620584808641,
+            "CPC": 50.41379415191359,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 0.8275883038271843,
+        "fill_color": "#7f7fff"
+    },
+    {
+        "riding": "Scarborough-Rouge Park",
+        "party": "LPC",
+        "votes": {
+            "LPC": 52.57493390855254,
+            "CPC": 47.42506609144746,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 5.149867817105076,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "Scarborough North",
+        "party": "CPC",
+        "votes": {
+            "LPC": 38.55164996548917,
+            "CPC": 61.44835003451084,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 22.89670006902167,
+        "fill_color": "#0000ff"
+    },
+    {
+        "riding": "Beaches-East York",
+        "party": "LPC",
+        "votes": {
+            "LPC": 59.02886768320739,
+            "CPC": 40.97113231679261,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 18.057735366414775,
+        "fill_color": "#ff4c4c"
+    },
+    {
+        "riding": "York South-Weston",
+        "party": "CPC",
+        "votes": {
+            "LPC": 49.97073942534426,
+            "CPC": 50.029260574655744,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 0.058521149311481224,
+        "fill_color": "#7f7fff"
+    },
+    {
+        "riding": "Spadina-Fort York",
+        "party": "LPC",
+        "votes": {
+            "LPC": 52.95972666178339,
+            "CPC": 47.040273338216615,
+            "NDP": 0.0,
+            "GRN": 0.0,
+            "BLOC": 0.0,
+            "PPC": 0.0,
+            "IND": 0.0
+        },
+        "margin": 5.919453323566778,
+        "fill_color": "#ff4c4c"
+    }
+]

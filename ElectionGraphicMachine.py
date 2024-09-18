@@ -5,27 +5,10 @@ import numpy as np
 import os
 import random
 import matplotlib.image as mpimg
-from vote_calculations import calculate_vote_totals, determine_winner, calculate_lead_margin
-from party_utils import get_leading_party
-from MapMaker import mapmaker_main
-
-
-def update_running_tally(votes_by_riding, parties_by_riding, all_parties):
-    # Update temp_vote for each party based on the current step's votes. Keeps track of votes onto the current slide
-    for party_name, votes in zip(parties_by_riding, votes_by_riding):
-        for party in all_parties:
-            if party['name'] == party_name:
-                party['temp_vote'] = party['pop_vote'] + votes  # temp_vote = frozentotal + current step votes
-                break
-
-def finalize_riding_votes(votes_by_riding, parties_by_riding, all_parties):
-    # After processing the riding, finalize pop_vote by adding all votes in the riding
-    for party_name, total_riding_votes in zip(parties_by_riding, votes_by_riding):
-        for party in all_parties:
-            if party['name'] == party_name:
-                party['pop_vote'] += total_riding_votes  # frozentotal += total votes at riding
-                break
-
+from data.vote_data import ridings
+from data.vote_calculations import calculate_vote_totals, determine_winner, calculate_lead_margin,update_running_tally,finalize_riding_votes
+from data.party_utils import get_leading_party
+from data.MapMaker import mapmaker_main
 
 
 def generate_individual_graphics(ridings, all_parties, num_graphics, num_selected_steps):
@@ -69,7 +52,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
         os.makedirs(output_dir)
 
     # Load the background image
-    background_img = mpimg.imread('background.jpg')
+    background_img = mpimg.imread('Required_Images/background.jpg')
 
     # Generate a separate image for each selected step for each riding
     for r, riding in enumerate(sorted_ridings):
@@ -158,7 +141,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                     # Determine image path
                     candidate_image_path = f'facesteals/{sorted_names[j]}.jpg'
                     if not os.path.exists(candidate_image_path):
-                        candidate_image_path = 'nopic.jpg'
+                        candidate_image_path = 'Required_Images/nopic.jpg'
 
                     # Load the image
                     image = plt.imread(candidate_image_path)
@@ -478,12 +461,6 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
             file_path = f'irlriding/{riding_name}.txt'
             input_svg = f'svg/{riding_name}.svg'
             output_dir = f'output_images'
-
-            # Collect data from ridings
-            party_names = []
-            pop_votes = []
-
-
             party_names=riding['short_name']  # Assuming this is a list of party short names
             pop_votes=riding['final_results']  # Flatten the list of final results
 
@@ -494,48 +471,6 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
             mapmaker_main(file_path, input_svg, output_dir, party_names, pop_votes,riding_name)
 
         print('Processed all ridings for all steps')
-
-# Example usage
-ridings = [
-    { 'name': 'Montreal',
-    'final_results': [1002133],
-    'candidate_names': ['Model-EpicMFan'],
-    'party_names': ['New Democratic Party'],
-    'short_name': ['NDP']
-  },
-{ 'name': 'Toronto',
-    'final_results': [762046, 635132],
-    'candidate_names': ['FreedomCanada2025', 'Tyty_1234'],
-    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
-    'short_name': ['CPC', 'LPC']
-  }, { 'name': 'Golden Horseshoe',
-    'final_results': [1131801, 408861],
-    'candidate_names': ['jeninhenin', 'CosmoCosma'],
-    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
-    'short_name': ['CPC', 'LPC']
-  }, { 'name': 'Southwestern Ontario',
-    'final_results': [1041655, 308311],
-    'candidate_names': ['Hayley-182', 'Phonexia2'],
-    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
-    'short_name': ['CPC', 'LPC']
-  }, { 'name': 'Central Ontario',
-    'final_results': [934574, 556805],
-    'candidate_names': ['SettingObvious4738', 'MrWhiteyIsAwesome'],
-    'party_names': ['Liberal Party of Canada', 'New Democratic Party'],
-    'short_name': ['LPC', 'NDP']
-  }, { 'name': 'Northern and Eastern Ontario',
-    'final_results': [1108352, 144579],
-    'candidate_names': ['Trick_Bar_1439', 'redwolf177'],
-    'party_names': ['Liberal Party of Canada', 'New Democratic Party'],
-    'short_name': ['LPC', 'NDP']
-  }, { 'name': 'Prairies',
-    'final_results': [338429, 898900],
-    'candidate_names': ['Melp8836', 'SaskPoliticker'],
-    'party_names': ['Conservative Party of Canada', 'Liberal Party of Canada'],
-    'short_name': ['CPC', 'LPC']
-  }
-
-]
 
 all_parties = [
     {'name': 'Conservative Party of Canada','short_pname':'CPC', 'color': 'blue','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
