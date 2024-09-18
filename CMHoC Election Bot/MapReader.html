@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMHoC Election Result Viewer</title>
+    <style>
+        #map-container {
+            width: 100%;
+            height: 600px; /* Adjust as needed */
+            overflow: auto;
+            border: 1px solid #ddd;
+            position: relative;
+        }
+        button {
+            margin: 10px;
+        }
+        /* Tooltip styling */
+        .tooltip {
+            position: absolute;
+            display: none;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        /* Section to display selected riding info */
+        #info-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="mapFile" accept=".svg" style="display:none;">
+    <input type="file" id="jsonFile" accept=".json" style="display:none;">
+
+    <!-- Buttons for uploading files -->
+    <button id="uploadButton">Upload SVG Map</button>
+    <button id="jsonButton">Upload JSON Data</button>
+
+    <!-- Button for generating the map -->
+    <button id="generateButton" disabled>Generate Map</button>
+
+    <!-- Container for displaying the map -->
+    <div id="map-container">
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <!-- Container to display selected riding info -->
+    <div id="info-container">
+        <h2>Riding Information</h2>
+        <div id="riding-info">Select a riding to see details.</div>
+    </div>
+
+    <script>
+        let svgContent = '';
+        let svgData = [];
+
+        // Handle SVG upload button click
+        document.getElementById('uploadButton').addEventListener('click', () => {
+            document.getElementById('mapFile').click();
+        });
+
+        // Handle JSON upload button click
+        document.getElementById('jsonButton').addEventListener('click', () => {
+            document.getElementById('jsonFile').click();
+        });
+
+        // Handle SVG file input change
+        document.getElementById('mapFile').addEventListener('change', handleFileUpload);
+
+        // Handle JSON file input change
+        document.getElementById('jsonFile').addEventListener('change', handleJsonUpload);
+
+        // Function to normalize names
+        function normalizeName(name) {
+            // Decode HTML entities
+            const textArea = document.createElement('textarea');
+            textArea.innerHTML = name;
+            name = textArea.value;
+
+            // Normalize name
+            return name.toLowerCase()
+                       .replace(/\s+/g, '')    // Remove spaces
+                       .replace(/-/g, '')      // Remove hyphens
+                       .replace(/—/g, '')      // Remove em dashes
+                       .replace(/[^\w\s]/g, ''); // Remove non-word characters
+        }
+
+        // Function to handle SVG file upload
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            if (file.type === 'image/svg+xml') {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    svgContent = reader.result;
+                    console.log('SVG Content Loaded:', svgContent); // Debugging line
+                    document.getElementById('generateButton').disabled = svgData.length === 0;
+                };
+                reader.onerror = (error) => {
+                    console.error('File reading error:', error);
+                    alert('Failed to read the file.');
+                };
+                reader.readAsText(file);
+            } else {
+                alert('Please upload an SVG file.');
+            }
+        }
+
+        // Function to handle JSON file upload
+        function handleJsonUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = () => {
+                try {
+                    svgData = JSON.parse(reader.result);
+                    validateJsonData(svgData);
+                    console.log('JSON Data Loaded:', svgData); // Debugging line
+                    document.getElementById('generateButton').disabled = svgContent === '';
+                } catch (error) {
+                    console.error('JSON parsing error:', error);
+                    alert('Failed to parse JSON data.');
+                }
+            };
+            reader.onerror = (error) => {
+                console.error('File reading error:', error);
+                alert('Failed to read the file.');
+            };
+            reader.readAsText(file);
+        }
+
+        // Validate JSON data to ensure all required fields are present
+        function validateJsonData(data) {
+            const requiredFields = ['riding', 'party', 'votes', 'margin', 'fill_color'];
+            let errors = [];
+
+            data.forEach((entry, index) => {
+                requiredFields.forEach(field => {
+                    if (!entry.hasOwnProperty(field)) {
+                        errors.push(`Error in entry ${index + 1}: Missing field "${field}"`);
+                    }
+                });
+            });
+
+            if (errors.length > 0) {
+                alert(`JSON validation errors:\n${errors.join('\n')}`);
+                svgData = []; // Reset if there are errors
+            } else {
+                alert('JSON data is valid.');
+            }
+        }
+
+        // Function to generate the map
+        document.getElementById('generateButton').addEventListener('click', () => {
+            generateMap();
+        });
+
+        // Function to update the map container with the SVG and apply colors from JSON
+        function generateMap() {
+            const mapContainer = document.getElementById('map-container');
+            mapContainer.innerHTML = svgContent;
+
+            const infoContainer = document.getElementById('riding-info');
+            let missingRidings = [];
+
+            // Find all elements with the data-riding attribute
+            const svgElements = mapContainer.querySelectorAll('[data-riding]');
+            svgElements.forEach((element) => {
+                const ridingName = normalizeName(element.getAttribute('data-riding'));
+                const matchingData = svgData.find(data => normalizeName(data.riding) === ridingName);
+
+                // If there's matching data, update the fill color and add event listeners for click
+                if (matchingData) {
+                    element.setAttribute('fill', matchingData.fill_color);
+
+                    // Add event listener for click
+                    element.addEventListener('click', () => {
+                        const {party, votes, margin} = matchingData;
+
+                        // Create a dynamic list of votes based on the available parties
+                        let votesHtml = '';
+                        //votesHtml += <strong>${matchingData.riding}</strong>
+                        const availableParties = ['LPC', 'CPC', 'NDP', 'GRN', 'BLOC', 'PPC', 'IND'];
+                        availableParties.forEach(partyName => {
+                            if (votes[partyName] !== undefined && votes[partyName] !== 0) {
+                                votesHtml += `<strong>${partyName}:</strong> ${(votes[partyName]).toFixed(2)}%<br>`;
+                            }
+                        });
+
+                        // Set the content of the popup
+                        infoContainer.innerHTML = `
+<strong>${matchingData.riding}</strong><br/>
+        <strong>Winning Party:</strong> ${party}<br/>
+        <strong>Votes:</strong><br/>
+        ${votesHtml}
+        <strong>Margin:</strong> ${(margin).toFixed(2)}%<br/>
+    `;
+                    });
+                } else {
+                    missingRidings.push(ridingName);
+                }
+            });
+
+            if (missingRidings.length > 0) {
+                alert(`The following ridings are missing in the JSON file: ${missingRidings.join(', ')}`);
+            } else {
+                console.log('All ridings matched successfully.');
+            }
+
+            console.log('Map updated with colors and click info from JSON:', svgData); // Debugging line
+        }
+    </script>
+</body>
+</html>
