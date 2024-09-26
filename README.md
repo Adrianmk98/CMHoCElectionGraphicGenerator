@@ -11,7 +11,8 @@ The CMHoC Election Graphic Generator allows for the quick generation of results 
 
 It will track the vote counts of the parties and allows for a random generation of different results. The user is able to able to set the number of steps they wish to generate, and have have that many images generated 
 
-![Golden_Horseshoe_step_15](https://github.com/user-attachments/assets/62642fb5-8243-43be-b677-468731c8087e)
+![Golden_Horseshoe_step_27](https://github.com/user-attachments/assets/ab7a2f8f-df7a-4fba-9fc9-dd0004bb9e40)
+
 
 It also has a seat counter at the bottom, which keeps track of the total vote count to be able to calculate the list vote.
 
