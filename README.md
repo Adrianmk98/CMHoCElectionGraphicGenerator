@@ -18,6 +18,6 @@ It also has a seat counter at the bottom, which keeps track of the total vote co
 
 Alongside the code will generate a line graph which shows the progression of the riding so you can watch the vote come in
 
-![line_graph_riding_01_Golden_Horseshoe](https://github.com/user-attachments/assets/8b852668-5999-43af-a30d-81b094acfac1)
+![line_graph_riding_03_Golden_Horseshoe](https://github.com/user-attachments/assets/d011eade-9eab-4e3e-b2f5-bfd0e259ca58)
 
 It will also generate an svg with the riding with the ridings coloured with the winner. It will also create a json file that can be used with the original svg in order to see ridings results mapped on their real life counterparts
