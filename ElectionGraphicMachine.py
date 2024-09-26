@@ -5,15 +5,98 @@ import numpy as np
 import os
 import random
 import matplotlib.image as mpimg
-from data.vote_data import ridings
 from data.vote_calculations import calculate_vote_totals, determine_winner, calculate_lead_margin,update_running_tally,finalize_riding_votes
 from data.party_utils import get_leading_party
 from data.MapMaker import mapmaker_main
+from matplotlib.text import TextPath
+from matplotlib.transforms import Affine2D
+import matplotlib.patches as patches
 
 
-def generate_individual_graphics(ridings, all_parties, num_graphics, num_selected_steps):
+def get_text_width(text, font_size, scale_factor=0.001):
+    # Estimate the width of the text using TextPath and scale it
+    text_path = TextPath((0, 0), text, size=font_size)
+    bounds = text_path.get_extents(Affine2D())
+    return bounds.width * scale_factor  # Scale the width to match plot dimensions
+
+def draw_progress_bar(ax, step, num_graphics,riding):
+    """
+    Draws a progress bar on the given axis.
+
+    Parameters:
+    ax (matplotlib axis): The axis on which to draw the progress bar.
+    step (int): The current step in the progress.
+    num_graphics (int): The total number of graphics to determine progress.
+    """
+
+    # Define progress bar properties
+    progress_bar_x = 0.05
+    progress_bar_y = 0.86
+    progress_bar_width = 0.9
+    progress_bar_height = 0.02
+
+    # Calculate the progress percentage
+    progress = (step / (num_graphics - 1)) * 100
+
+    # Draw the background of the progress bar
+    bar_background = plt.Rectangle((progress_bar_x, progress_bar_y), progress_bar_width, progress_bar_height,
+                                   color='lightgray', ec='black', alpha=0.8)
+    ax.add_patch(bar_background)
+
+    # Draw the progress bar
+    progress_bar = plt.Rectangle((progress_bar_x, progress_bar_y), (progress / 100) * progress_bar_width,
+                                 progress_bar_height, color='blue', ec='black', alpha=0.8)
+    ax.add_patch(progress_bar)
+
+    # Add text showing the progress percentage
+    ax.text(progress_bar_x + progress_bar_width / 2, progress_bar_y + progress_bar_height / 2,
+            f'{progress:.1f}%', fontsize=12, ha='center', va='center', weight='bold')
+    # Add the riding name as a title above the progress bar
+    ax.text(0.5, progress_bar_y + progress_bar_height + 0.01, f'{riding["name"]}',
+            fontsize=36, ha='center', va='bottom', weight='bold')
+
+
+def add_party_box(ax, x_pos, picture_y_pos, picture_height, width, sorted_short_parties, j,sorted_Colours):
+    """
+    Draws a box in the middle of the picture's height and adds centered text inside it.
+
+    Parameters:
+    ax (matplotlib axis): The axis on which to draw the box and text.
+    x_pos (float): The x-coordinate for positioning the box.
+    picture_y_pos (float): The y-coordinate of the bottom of the picture.
+    picture_height (float): The height of the picture.
+    width (float): The total width of the main box.
+    sorted_short_parties (list): The list containing short party names.
+    j (int): The index for selecting the party name from the sorted_short_parties list.
+    """
+
+    # Calculate the middle of the picture's height
+    picture_middle_y = picture_y_pos - 0.05 + (picture_height / 2)
+
+    # Define the height and position the new box such that its middle aligns with the picture's middle
+    partybox_height = 0.05
+    box_y_pos = picture_middle_y - (partybox_height / 2)  # Center the box on the picture's middle
+
+    # Define the width of the new box (from the middle of the box to just before the end)
+    new_box_width = (x_pos + width / 2) - x_pos - 0.01  # tiny_margin to leave space before the end of the box
+
+    # Draw the new box starting in the middle of the picture's height
+    new_box = plt.Rectangle((x_pos + 0.005, box_y_pos), new_box_width, partybox_height,
+                            color=sorted_Colours[j], alpha=0.5, ec='black')
+    ax.add_patch(new_box)
+
+    # Add text to the new box, centering it
+    text_x_pos = x_pos + new_box_width / 2  # Center the text horizontally in the box
+    text_y_pos = box_y_pos + partybox_height / 2  # Center the text vertically in the box
+
+    ax.text(text_x_pos + 0.005, text_y_pos, f'{sorted_short_parties[j]}',
+            fontsize=18, ha='center', va='center', color='black')
+
+
+def generate_individual_graphics(ridings, all_parties, num_graphics, num_selected_steps,seatsToProcess):
     # Sort ridings alphabetically by name
 
+    global seats_allocated
     sorted_ridings = ridings  # Keep the original order from the spreadsheet
     winning_candidate_indices = [-1] * len(sorted_ridings)  # -1 indicates no winner yet
     winner_determined_steps = [None] * len(sorted_ridings)  # Initialize with None for each riding
@@ -23,9 +106,10 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
     # Initialize vote totals matrix for each riding
     vote_totals_by_riding = [np.zeros((num_graphics, len(riding['final_results']))) for riding in sorted_ridings]
     # Generate random vote totals for each candidate in each riding
-    seatsprocessed = 1
-    for r, riding in enumerate(sorted_ridings):
+    seatsprocessed = 0
 
+    for r, riding in enumerate(sorted_ridings):
+        seatsprocessed = seatsprocessed + 1
         num_parties = len(riding['final_results'])
         for j in range(num_parties):
             total_votes = riding['final_results'][j]
@@ -38,7 +122,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
         vote_totals_by_riding[r][0] = np.zeros(num_parties)
 
     # Include steps at increments of 2.5%
-    increments = np.linspace(0, 40, num=num_graphics)
+    increments = np.linspace(0, num_graphics, num=num_graphics)
 
     # Always include step 0 and step 40
 
@@ -59,6 +143,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
         print(f'Starting processing for riding {riding["name"]}')
         # Track if seat counts have been updated for this riding
         previous_leading_party=None
+        name_font_size = 22
 
         # Then loop through all steps for that specific riding
         for step in selected_steps:
@@ -98,12 +183,12 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
 
                 total_votes_step = sorted_votes.sum()
                 num_candidates = min(len(riding['candidate_names']), 4)
-                width = 0.7 / 4
+                width = 0.8 / 4
                 padding = 0.1 / 4
 
                 # Dimensions for the picture placeholder
-                picture_width = width * 0.8
-                picture_height = 0.35  # Height of the picture placeholder
+                picture_width = width * 0.5
+                picture_height = 0.2  # Height of the picture placeholder
 
                 # Adjust y_pos for the picture box so it ends before the candidate information box
 
@@ -124,6 +209,8 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                 # Calculate starting position to center the candidate block within the screen
                 start_x = (1 - total_width) / 2  # Horizontal centering
                 start_y = (1 - total_height) / 2  # Vertical centering
+                # Set the initial font size
+
 
                 for j in range(num_candidates_to_display):
                     col = j % num_displayed_columns
@@ -134,9 +221,27 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                     y_pos = start_y + row * (0.45 + picture_height)  # Position adjusted for picture and info space
                     picture_y_pos = y_pos + 0.35  # Position it such that it starts at y_pos + 0.35 and ends before the information box
                     # Draw candidate's information box
+                    # Create the rectangle with a transparent fill
                     rect = plt.Rectangle((x_pos - width / 2, y_pos), width, 0.35 + picture_height,
-                                         color=sorted_colors[j],alpha=0.3, ec='black')
+                                         color=sorted_colors[j], alpha=0.25)  # Fill color with transparency
+                    # Add the rectangle to the axis
                     ax.add_patch(rect)
+
+
+                    # Calculate the x-coordinate for the vertical line (center of the rectangle)
+                    center_x = x_pos  # The rectangle is centered at x_pos, so this is the midpoint
+
+                    # Draw a vertical line through the center of the rectangle
+                    ax.vlines(x=center_x, ymin=y_pos+0.05, ymax=y_pos + 0.18, color='black', linewidth=1.5)
+
+                    # Set the edge color, linewidth, and edge alpha
+                    edge_color = 'black'
+                    edge_alpha = 0.7  # Set your desired alpha for the edge color
+                    rect.set_edgecolor(edge_color)
+
+                    # Create a new edge line with the specified alpha
+                    edge_line = plt.Line2D([0], [0], color=edge_color, alpha=edge_alpha, linewidth=3)
+                    ax.add_line(edge_line)
 
                     # Determine image path
                     candidate_image_path = f'facesteals/{sorted_names[j]}.jpg'
@@ -147,9 +252,13 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                     image = plt.imread(candidate_image_path)
 
                     # Draw picture image above the candidate's information box
-                    ax.imshow(image, extent=(x_pos - picture_width / 2 , x_pos + picture_width / 2 ,
+                    ax.imshow(image, extent=(x_pos - width / 2+0.005, x_pos,
                                              picture_y_pos - 0.05, picture_y_pos - 0.05 + picture_height),
-                              aspect='auto', alpha=1, zorder=1)  # Ensure image is drawn on top
+                              aspect='auto', alpha=1, zorder=1)
+                    # Calculate the middle of the picture's height
+                    picture_middle_y = picture_y_pos - 0.05 + (picture_height / 2)
+
+
 
                     text_y_pos = y_pos + 0.15   # Center the text within the party color box
 
@@ -157,27 +266,118 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                     lead_margin = calculate_lead_margin(sorted_votes, j,num_candidates_to_display)
 
                     percentage_of_all = (sorted_votes[j] / total_votes_step) * 100 if total_votes_step > 0 else 0
-                    if num_candidates_to_display <= 2:
-                        dynamic_font_size_text = 14
-                    elif num_candidates_to_display == 3:
-                        dynamic_font_size_text = 14
-                    else:
-                        dynamic_font_size_text = 14
 
                     # Fixed Y position for the top of the text
                     fixed_y_pos = text_y_pos  # The same Y position for all text, no adjustment
 
                     # Generate the text with or without the lead margin
-                    text = (f'{sorted_names[j]}\n'
-                            f'{sorted_short_parties[j]}\n'
-                            f'Votes: {int(sorted_votes[j])}\n'
-                            f'{percentage_of_all:.1f}%')
-                    if lead_margin > 0:
-                        text += f'\n{int(lead_margin)} lead'
+                    # Calculate the center of the unified box for consistent Y positioning
+                    y_center = y_pos + 0.25 / 2  # Centered vertically in the box
 
-                    # Draw the text starting from the same Y position
-                    ax.text(x_pos, fixed_y_pos+0.07, text, fontsize=dynamic_font_size_text, ha='center', va='top',
-                            bbox=dict(facecolor='lightgray', alpha=0.5))
+                    # Prepare the text for the right side
+                    text = f'{int(sorted_votes[j])}'
+
+
+
+                    # Define the available width for the right side text
+                    available_width_right = width / 2-0.02  # Right half of the box
+
+                    # Loop to reduce font size if text width exceeds available width
+                    while get_text_width(text,
+                                         name_font_size) > available_width_right and name_font_size > 1:  # Ensure font size doesn't go below 1
+                        name_font_size -= 1
+
+                    # Calculate positions for the information text on the right side
+                    text_x_center = x_pos + (width / 2) / 2  # Center in the right half
+                    text_y_center = y_center  # Use common y_center for consistent vertical alignment
+
+                    # Add the information text inside the bottomcandidatebox (right side)
+                    ax.text(text_x_center, text_y_center, text,
+                            fontsize=name_font_size, ha='center', va='center',
+                            color='black')  # Centered both horizontally and vertically
+
+                    if lead_margin > 0:
+                        leadtext = f'{int(lead_margin)} \nlead'  # Append lead margin information if applicable
+                        ax.text(text_x_center, text_y_center-0.07, leadtext,
+                                fontsize=14, ha='center', va='center',
+                                color='black')  # Centered both horizontally and vertically
+
+                    # Calculate positions for the percentage text on the left side
+                    half_width = width / 2  # Half-width for the left box
+                    text_x_left = x_pos - width / 2 + half_width / 2  # Center in the left half
+                    text_y_left = y_center  # Use common y_center for consistent vertical alignment
+
+                    # Add the text (percentage_of_all) to the center of the left half
+                    ax.text(text_x_left, text_y_left, f'{percentage_of_all:.1f}%',
+                            fontsize=22, ha='center', va='center',
+                            color='black')  # Centered both horizontally and vertically
+
+                    # Add a progress bar in the bottom third of what was the left half
+                    progress_bar_height = 0.02  # Set a height for the progress bar
+                    progress_bar_y = y_pos  # Start at the bottom of the box
+
+                    # Calculate the width of the progress bar based on percentage_of_all
+                    progress_bar_width = (percentage_of_all / 100) * half_width
+
+                    # Create and add the progress bar to what was the left half of the unified box
+                    progress_bar = plt.Rectangle((x_pos - width / 2, progress_bar_y), progress_bar_width,
+                                                 progress_bar_height, color=sorted_colors[j], alpha=0.8)
+                    ax.add_patch(progress_bar)
+
+                    # Optionally, add the border of the full progress bar area for clarity
+                    progress_bar_outline = plt.Rectangle((x_pos - width / 2, progress_bar_y), half_width,
+                                                         progress_bar_height, fill=False, edgecolor='black',
+                                                         linewidth=1)
+                    ax.add_patch(progress_bar_outline)
+
+                    # Use sorted_names[j] as the message
+                    message_text = sorted_names[j]  # Set the text to the name
+                    message_text_x = x_pos  # Centered across the entire box
+                    message_text_y = y_pos + 0.25 - 0.02  # Positioned slightly below the top edge (inside the box)
+
+                    # Set an initial font size for the message
+                    initial_font_size = 22
+                    minimum_font_size = 12  # Minimum font size to prevent excessive shrinking
+
+                    # Dynamically adjust font size to fit within the box
+                    current_font_size = initial_font_size
+                    available_width = width - 0.04  # Leave a small margin
+
+                    # Debugging output
+                    print(f"Available Width: {available_width}")
+                    print(f"Initial Font Size: {current_font_size}")
+
+                    # Only shrink if the text is too wide
+                    current_text_width = get_text_width(message_text, current_font_size)
+                    print(f"Text Width with Initial Font Size: {current_text_width}")
+
+                    if current_text_width > available_width:
+                        while current_text_width > available_width and current_font_size > minimum_font_size:
+                            current_font_size -= 1  # Decrease the font size until it fits
+                            current_text_width = get_text_width(message_text, current_font_size)  # Update text width
+                            print(f"Reducing Font Size: {current_font_size}, Text Width: {current_text_width}")
+
+                    # Add the text message inside the top part with adjusted font size
+                    ax.text(message_text_x, message_text_y, message_text,
+                            fontsize=current_font_size, ha='center', va='top', color='black')
+
+                    # Calculate the center of the left half of the unified box for the percentage text
+                    text_x_left = x_pos - width / 2 + half_width / 2
+                    text_y_left = y_pos + 0.25 / 2  # Vertical center of the box
+
+                    # Add the percentage text in the middle of what was the left half
+                    ax.text(text_x_left, text_y_left, f'{percentage_of_all:.1f}%',
+                            fontsize=22, ha='center', va='center', color='black')
+
+                    # Calculate the center of the left half of the unified box for the percentage text
+                    text_x_left = x_pos - width / 2 + half_width / 2
+                    text_y_left = y_pos + 0.25 / 2  # Vertical center of the box
+
+                    # Add the percentage text in the middle of what was the left half
+                    ax.text(text_x_left, text_y_left, f'{percentage_of_all:.1f}%',
+                            fontsize=22, ha='center', va='center', color='black')
+
+                    add_party_box(ax, x_pos, picture_y_pos, picture_height, width, sorted_short_parties, j,sorted_colors)
 
                     # Draw checkmark if the candidate is the winner
                     if winning_candidate_indices[r] != -1:
@@ -197,27 +397,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                             ax.text(x_pos_check + width / 2 - 0.005, y_pos_check + 0.35, '✓',
                                     fontsize=72, ha='right', va='top', color='green')
 
-                # Draw progress bar
-                progress_bar_x = 0.05
-                progress_bar_y = 0.86
-                progress_bar_width = 0.9
-                progress_bar_height = 0.02
-                progress = (step / (num_graphics - 1)) * 100
-
-                bar_background = plt.Rectangle((progress_bar_x, progress_bar_y), progress_bar_width, progress_bar_height,
-                                                color='lightgray', ec='black', alpha=0.8)
-                ax.add_patch(bar_background)
-
-                progress_bar = plt.Rectangle((progress_bar_x, progress_bar_y), (progress / 100) * progress_bar_width,
-                                              progress_bar_height, color='blue', ec='black', alpha=0.8)
-                ax.add_patch(progress_bar)
-
-                ax.text(progress_bar_x + progress_bar_width / 2, progress_bar_y + progress_bar_height / 2,
-                        f'{progress:.1f}%', fontsize=12, ha='center', va='center', weight='bold')
-
-                # Add the riding name as a title above the progress bar
-                ax.text(0.5, progress_bar_y + progress_bar_height + 0.01, f'{riding["name"]}',
-                        fontsize=36, ha='center', va='bottom', weight='bold')
+                draw_progress_bar(ax, step, num_graphics,riding)
 
                 # Create a dictionary for party seat counts using 'seats' from all_parties
 
@@ -268,8 +448,8 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                     sorted(party_seat_counts.items(), key=lambda item: item[1], reverse=True))
 
                 # Draw party seat counts
-                seat_count_y_pos = y_pos - 0.25  # Positioning for the seat counts row
-                seat_count_height = 0.25  # Height for the seat counts row
+                seat_count_y_pos = y_pos - 0.35  # Positioning for the seat counts row
+                seat_count_height = 0.3  # Height for the seat counts row
                 padding = 0.03  # Reduced padding between party boxes
                 num_parties = min(len(sorted_party_seat_counts), 6)  # Limit to first 6 parties for display
                 party_width = 0.6 / num_parties  # Adjust width to fit more compactly
@@ -325,7 +505,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
 
                     if party_name != 'Independent' and total_temp_vote > 0:
                         noindytotal_vote_percent = (temp_vote / noindytotal_temp_vote) * 100
-                        national_vote_seats = (noindytotal_vote_percent / 100) * (26 - seatsprocessed)
+                        national_vote_seats = (noindytotal_vote_percent / 100) * (seatsToProcess - seatsprocessed)
                         # List to store seat allocations per round
                         # Initialize seat allocation and vote counts
                         # Initialize seat allocations and store initial vote totals
@@ -336,7 +516,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
 
                         # Loop for 26 rounds (to allocate 26 seats)
                         # Adjust the total number of seats to allocate, excluding those already processed
-                        total_seats_to_allocate = 26 - seatsprocessed
+                        total_seats_to_allocate = seatsToProcess - seatsprocessed
 
                         # Get the seat count for Independent parties (using `count`)
                         independent_seats = sum(
@@ -361,6 +541,8 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                             print(f"Round {round + 1}: {leading_party} gets a seat. Remaining votes: {party_votes}")
 
                         # Final seat allocation
+
+
                         print(f"Final seat allocation: {seats_allocated}")
 
                         # Use `seats_allocated` for drawing the seat count text
@@ -453,7 +635,11 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
             print(f"{party['name']} - Total Votes (pop_vote): {party['pop_vote']}")
 
         print(f'Completed all graphics for riding {riding["short_name"]} with final results: {riding["final_results"]}')
-        seatsprocessed = seatsprocessed + 1
+
+        # Update the 'seats_list' field in all_parties based on the seat allocation
+        for party in all_parties:
+            if party['name'] in seats_allocated:
+                party['seats_list'] = seats_allocated[party['name']]
         if __name__ == "__main__":
             # Define your file paths
 
@@ -471,13 +657,15 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
             mapmaker_main(file_path, input_svg, output_dir, party_names, pop_votes,riding_name)
 
         print('Processed all ridings for all steps')
+        for party in all_parties:
+            print(f"Name: {party.get('name')}")
+            print(f"Short Name: {party.get('short_pname')}")
+            print(f"Color: {party.get('color')}")
+            print(f"Seats: {party.get('seats')}")
+            print(f"Seat Hold: {party.get('seats_list')}")
+            print(f"Popular Vote: {party.get('pop_vote')}")
+            print(f"Temporary Vote: {party.get('temp_vote')}")
+            print("-" * 20)
 
-all_parties = [
-    {'name': 'Conservative Party of Canada','short_pname':'CPC', 'color': 'blue','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
-    {'name': 'Liberal Party of Canada','short_pname':'LPC', 'color': 'red','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
-    {'name': 'New Democratic Party','short_pname':'NDP', 'color': 'orange','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
-    {'name': 'Bloc Quebecois','short_pname':'BLOC', 'color': 'turquoise','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0},
-    {'name': 'Independent','short_pname':'IND', 'color': 'gray','seats':0,'seat_hold':0,'pop_vote':0, 'temp_vote': 0}
-]
 
-generate_individual_graphics(ridings, all_parties, num_graphics=40, num_selected_steps=2)
+
