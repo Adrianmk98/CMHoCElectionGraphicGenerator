@@ -1,5 +1,4 @@
 import math
-
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -8,9 +7,69 @@ import matplotlib.image as mpimg
 from data.vote_calculations import calculate_vote_totals, determine_winner, calculate_lead_margin,update_running_tally,finalize_riding_votes
 from data.party_utils import get_leading_party
 from data.MapMaker import mapmaker_main
+from data.listMaker import listcreation
 from matplotlib.text import TextPath
 from matplotlib.transforms import Affine2D
 import matplotlib.patches as patches
+
+
+def MMP_calculation(all_parties, seatsToProcess, seatsprocessed):
+    """
+    Perform the MMP seat allocation calculation for parties excluding 'Independent'.
+
+    Args:
+    all_parties (list): A list of dictionaries representing all parties with keys like 'name', 'temp_vote', etc.
+    seatsToProcess (int): Total number of seats available for allocation.
+    seatsprocessed (int): Number of seats that have already been processed.
+
+    Returns:
+    dict: A dictionary with the number of seats allocated to each party.
+    """
+
+    # Calculate total votes excluding Independent
+    noindytotal_temp_vote = sum(party['temp_vote'] for party in all_parties if party['name'] != 'Independent')
+
+    # Initialize seat allocations and store initial vote totals
+    seats_allocated = {party['name']: 0 for party in all_parties if party['name'] != 'Independent'}
+    original_party_votes = {party['name']: party['temp_vote'] for party in all_parties if party['name'] != 'Independent'}
+    party_votes = original_party_votes.copy()  # Copy the original votes for modification
+
+    total_seats_to_allocate = seatsToProcess
+
+    # Get the seat count for Independent parties
+    independent_seats = sum(party['seats'] for party in all_parties if party['name'] == 'Independent')
+    print(f"Independent seats: {independent_seats}")
+    fptp_seats = {party['name']: party['seats'] for party in all_parties}
+    print(f"party fptp seats: {fptp_seats}")
+
+    # Loop for the remaining rounds (excluding already processed independent seats)
+    for round in range(total_seats_to_allocate - independent_seats):
+        # Determine the leading party based on remaining votes
+        leading_party = max(party_votes, key=party_votes.get)
+
+        # Allocate a seat to the leading party
+        seats_allocated[leading_party] += 1
+
+        # Calculate the current seats won by the leading party
+        seats_won = seats_allocated[leading_party]
+
+        # Reset the party_votes to the original value divided by the number of seats won
+        party_votes[leading_party] = original_party_votes[leading_party] / (seats_won + 1)  # +1 to avoid division by zero
+
+        # Optional: Print round info (for debugging)
+        print(f"Round {round + 1}: {leading_party} gets a seat. Remaining votes: {party_votes}")
+
+    # Final seat allocation
+    print(f"Final seat allocation: {seats_allocated}")
+    # Final seat allocation after removing FPTP seats
+    final_seat_allocation = {party: seats_allocated[party] - fptp_seats.get(party, 0) for party in seats_allocated}
+
+    print(f"Final seat allocation (excluding FPTP seats): {final_seat_allocation}")
+
+    return final_seat_allocation
+
+# Example usage
+# seats_allocated = MMP_calculation(all_parties, seatsToProcess, seatsprocessed)
 
 
 def get_text_width(text, font_size, scale_factor=0.001):
@@ -93,7 +152,7 @@ def add_party_box(ax, x_pos, picture_y_pos, picture_height, width, sorted_short_
             fontsize=18, ha='center', va='center', color='black')
 
 
-def generate_individual_graphics(ridings, all_parties, num_graphics, num_selected_steps,seatsToProcess):
+def generate_individual_graphics(ridings, all_parties, num_graphics, num_selected_steps,seatsToProcess,byelection):
     # Sort ridings alphabetically by name
 
     global seats_allocated
@@ -103,13 +162,15 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
     # Initialize party colors
     party_colors = {party['name']: party['color'] for party in all_parties}
     party_seat_counts = {party['name']: party['seats'] for party in all_parties}
+    party_listseat_counts = {party['name']: party['seats_list'] for party in all_parties}
+    party_total_seats = {party['name']: party['seats'] + party['seats_list'] for party in all_parties}
     # Initialize vote totals matrix for each riding
     vote_totals_by_riding = [np.zeros((num_graphics, len(riding['final_results']))) for riding in sorted_ridings]
     # Generate random vote totals for each candidate in each riding
     seatsprocessed = 0
 
     for r, riding in enumerate(sorted_ridings):
-        seatsprocessed = seatsprocessed + 1
+
         num_parties = len(riding['final_results'])
         for j in range(num_parties):
             total_votes = riding['final_results'][j]
@@ -144,6 +205,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
         # Track if seat counts have been updated for this riding
         previous_leading_party=None
         name_font_size = 22
+
 
         # Then loop through all steps for that specific riding
         for step in selected_steps:
@@ -210,6 +272,8 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                 start_x = (1 - total_width) / 2  # Horizontal centering
                 start_y = (1 - total_height) / 2  # Vertical centering
                 # Set the initial font size
+
+
 
 
                 for j in range(num_candidates_to_display):
@@ -386,6 +450,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                         # Find the new index of the winning candidate in the sorted list
                         sorted_winning_index = np.where(sorted_indices == winning_index)[0][0]
 
+
                         # Only draw the checkmark if it's among the displayed candidates
                         if sorted_winning_index < max_displayed_candidates:
                             x_pos_check = start_x + (sorted_winning_index % num_displayed_columns) * (
@@ -446,19 +511,95 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                 # Sort parties by seat count in descending order
                 sorted_party_seat_counts = dict(
                     sorted(party_seat_counts.items(), key=lambda item: item[1], reverse=True))
+                print("Virginia",party_seat_counts.items())
+
+                party_listseat_counts = {party['name']: party['seats_list'] for party in all_parties}
+
+                combined_seat_counts = {
+                    party_name: party_seat_counts.get(party_name, 0) + party_listseat_counts.get(party_name, 0)
+                    for party_name in party_seat_counts
+                }
+
+                # Sort the combined_seat_counts dictionary by the combined value in descending order
+                sorted_combined_seat_counts = dict(
+                    sorted(combined_seat_counts.items(), key=lambda item: item[1], reverse=True)
+                )
+
+
+                # Print sorted seat counts (for debugging purposes)
+                print("Ohio Sorted Combined Seat Counts:", sorted_combined_seat_counts)
+
+
 
                 # Draw party seat counts
+
                 seat_count_y_pos = y_pos - 0.35  # Positioning for the seat counts row
                 seat_count_height = 0.3  # Height for the seat counts row
                 padding = 0.03  # Reduced padding between party boxes
-                num_parties = min(len(sorted_party_seat_counts), 6)  # Limit to first 6 parties for display
+                num_parties = min(len(sorted_combined_seat_counts), 6)  # Limit to first 6 parties for display
                 party_width = 0.6 / num_parties  # Adjust width to fit more compactly
                 total_width = num_parties * party_width + (num_parties - 1) * padding  # Total width including padding
                 start_x = (1 - total_width) / 2  # Center the seat count boxes horizontally
-
-                # Draw party boxes and seat counts
                 for i, (party_name, count) in enumerate(
-                        list(sorted_party_seat_counts.items())[:6]):  # Only take the first 6 parties
+                        list(sorted_combined_seat_counts.items())[:6]):  # Only take the first 6 parties
+
+                    temp_vote = next((party['temp_vote'] for party in all_parties if party['name'] == party_name), 0)
+
+                    # Ensure pop_vote is converted to an integer without decimals
+                    temp_vote = math.floor(temp_vote)  # Rounds down to nearest integer
+                    # Calculate the total temp_vote across all parties
+                    total_temp_vote = sum(party['temp_vote'] for party in all_parties)
+
+                    # Ensure total_temp_vote is converted to an integer without decimals
+                    total_temp_vote = math.floor(total_temp_vote)  # Rounds down to nearest integer
+
+                    # Calculate the total temp_vote across all parties excluding 'Independent'
+                    noindytotal_temp_vote = sum(
+                        party['temp_vote'] for party in all_parties if party['name'] != 'Independent')
+
+                    # Ensure total_temp_vote is converted to an integer without decimals
+                    noindytotal_temp_vote = math.floor(total_temp_vote)  # Rounds down to nearest integer
+
+                    # Retrieve the party dictionary using party_name
+                    party_dict = next((party for party in all_parties if party['name'] == party_name), None)
+
+                    # Get the short_pname from the dictionary
+                    short_pname = party_dict['short_pname'] if party_dict else party_name
+
+                    for party in all_parties:
+                        if party['name'] == party_name:
+                            party['seats'] = party_seat_counts[party['name']]
+
+                    if party_name != 'Independent' and total_temp_vote > 0:
+                        print("doctor ", seatsToProcess)
+
+                        seats_allocated = MMP_calculation(all_parties, seatsToProcess, seatsprocessed)
+
+                        for party in all_parties:
+                            if party['name'] == party_name:
+                                party['seats'] = party_seat_counts[party['name']]
+
+                        for party in all_parties:
+                            if party['name'] in seats_allocated:
+                                party['seats_list'] = seats_allocated[party['name']]
+                            else:
+                                party['seats_list'] = 0  # Set to 0 if the party was not allocated any seats
+
+                party_listseat_counts = {party['name']: party['seats_list'] for party in all_parties}
+                party_fptp_counts = {party['name']: party['seats'] for party in
+                                     all_parties}  # Assuming you meant 'seats', not 'seats_list'
+
+                combined_seat_counts = {
+                    party['name']: party_fptp_counts.get(party['name'], 0) + party_listseat_counts.get(party['name'], 0)
+                    for party in all_parties
+                }
+
+                sorted_combined_seat_counts = dict(
+                    sorted(combined_seat_counts.items(), key=lambda item: item[1], reverse=True)
+                )
+
+                for i, (party_name, count) in enumerate(
+                        list(sorted_combined_seat_counts.items())[:6]):  # Only take the first 6 parties
 
                     party_x_pos = start_x + i * (party_width + padding) + party_width / 2
 
@@ -466,10 +607,8 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                     party_box = plt.Rectangle((party_x_pos - party_width / 2, seat_count_y_pos),
                                               party_width, seat_count_height,
                                               color=party_colors.get(party_name, 'grey'),
-                                              ec='black')  # Use 'grey' if color not found
+                                              ec='black',alpha=0.25)  # Use 'grey' if color not found
                     ax.add_patch(party_box)
-
-
 
                     temp_vote = next((party['temp_vote'] for party in all_parties if party['name'] == party_name), 0)
 
@@ -504,53 +643,29 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                     # National vote seat allocation
 
                     if party_name != 'Independent' and total_temp_vote > 0:
-                        noindytotal_vote_percent = (temp_vote / noindytotal_temp_vote) * 100
-                        national_vote_seats = (noindytotal_vote_percent / 100) * (seatsToProcess - seatsprocessed)
-                        # List to store seat allocations per round
-                        # Initialize seat allocation and vote counts
-                        # Initialize seat allocations and store initial vote totals
-                        seats_allocated = {party['name']: 0 for party in all_parties if party['name'] != 'Independent'}
-                        original_party_votes = {party['name']: party['temp_vote'] for party in all_parties if
-                                                party['name'] != 'Independent'}
-                        party_votes = original_party_votes.copy()  # Copy the original votes for modification
+                        print("doctor ",seatsToProcess)
+                        seats_allocated = MMP_calculation(all_parties, seatsToProcess, seatsprocessed)
+                        for party in all_parties:
+                            print("bad wolf", party_seat_counts[party['name']])
+                            if party['name'] == party_name:
+                                party['seats'] = party_seat_counts[party['name']]
 
-                        # Loop for 26 rounds (to allocate 26 seats)
-                        # Adjust the total number of seats to allocate, excluding those already processed
-                        total_seats_to_allocate = seatsToProcess - seatsprocessed
-
-                        # Get the seat count for Independent parties (using `count`)
-                        independent_seats = sum(
-                            party['seats'] for party in all_parties if party['name'] == 'Independent')
-                        print(independent_seats)
-
-                        # Loop for the remaining rounds (excluding already processed independent seats)
-                        for round in range(total_seats_to_allocate - independent_seats):
-                            leading_party = max(party_votes, key=party_votes.get)
-
-                            # Allocate a seat to the leading party
-                            seats_allocated[leading_party] += 1
-
-                            # Calculate the current seats won by the leading party
-                            seats_won = seats_allocated[leading_party]  # Seats won so far
-
-                            # Reset the party_votes to the original value divided by the number of seats won
-                            party_votes[leading_party] = original_party_votes[leading_party] / (
-                                        seats_won + 1)  # +1 to avoid division by zero
-
-                            # Optional: Print round info (for debugging)
-                            print(f"Round {round + 1}: {leading_party} gets a seat. Remaining votes: {party_votes}")
-
-                        # Final seat allocation
-
-
-                        print(f"Final seat allocation: {seats_allocated}")
+                        for party in all_parties:
+                            if party['name'] in seats_allocated:
+                                party['seats_list'] = seats_allocated[party['name']]
+                            else:
+                                party['seats_list'] = 0  # Set to 0 if the party was not allocated any seats
 
                         # Use `seats_allocated` for drawing the seat count text
-                        ax.text(party_x_pos, seat_count_y_pos + seat_count_height / 2 + 0.01,
-                                f'{int(seats_allocated.get(party_name, 0))+int(count)}', fontsize=20, ha='center', va='center',
+                        print(all_parties,"tyler")
+
+
+                        ax.text(party_x_pos, seat_count_y_pos + seat_count_height / 2 + 0.0005,
+                                f'{int(seats_allocated.get(party_name, 0))+party_seat_counts.get(party_name,0)}', fontsize=20, ha='center', va='center',
                                 color='black')
+
                     else:
-                        ax.text(party_x_pos, seat_count_y_pos + seat_count_height / 2 + 0.01,
+                        ax.text(party_x_pos, seat_count_y_pos + seat_count_height / 2 + 0.0005,
                                 f'{int(count)}', fontsize=20, ha='center', va='center', color='black')
 
 
@@ -559,25 +674,52 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                     # Format the text to be displayed
                     # Main text with fontsize 16
                     # Base vertical position for the main text
-                    base_y = seat_count_y_pos + seat_count_height / 2 + 0.07
+                    base_y = seat_count_y_pos + seat_count_height / 2 + 0.075
 
                     # Vertical offset for spacing between lines
-                    offset = 0.025  # Adjust as needed for spacing
+                    offset = 0.03  # Adjust as needed for spacing
 
                     # Add text for short_pname
-                    ax.text(party_x_pos, base_y + offset,  # Positioned at the top
-                            f'{short_pname}',
-                            fontsize=16, ha='center', va='center', color='black')
-
+                    ax.text(
+                        party_x_pos,
+                        base_y + offset+0.02,  # Positioned at the top
+                        f'{short_pname}',
+                        fontsize=16,
+                        ha='center',
+                        va='center',
+                        color='black',
+                        bbox=dict(facecolor=party_colors.get(party_name, 'grey'), edgecolor='black',
+                                  boxstyle='round,pad=0.1')
+                    )
                     # Add text for temp_vote
                     ax.text(party_x_pos, base_y,  # Positioned in the middle
                             f'{temp_vote}',
                             fontsize=12, ha='center', va='center', color='black')
 
+                    # Define the y-positions for the texts
+                    vote_text_y = base_y - offset
+
                     # Add text for total_vote_percent_formatted
-                    ax.text(party_x_pos, base_y - offset,  # Positioned at the bottom
-                            f'{total_vote_percent_formatted}',
-                            fontsize=16, ha='center', va='center', color='black')
+                    ax.text(
+                        party_x_pos,
+                        vote_text_y,  # Positioned at the bottom
+                        f'{total_vote_percent_formatted}',
+                        fontsize=16,
+                        ha='center',
+                        va='center',
+                        color='black'
+                    )
+
+                    # Add a horizontal line directly under total_vote_percent_formatted text
+                    line_y = vote_text_y - 0.02  # Adjust the value to control the distance between the text and the line
+                    half_party_width = party_width / 2  # Half the width for symmetric positioning
+                    ax.hlines(
+                        y=line_y,
+                        xmin=party_x_pos - half_party_width+0.005,
+                        xmax=party_x_pos + half_party_width-0.005,
+                        color='black',
+                        linewidth=1
+                    )
 
                 # Add background image last
                 ax.imshow(background_img, aspect='auto', extent=[0, 1, 0, 1], alpha=0.3)
@@ -628,6 +770,7 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
                     'party_names']  # e.g., ['Liberal Party of Canada', 'Conservative Party of Canada', ...]
                 # 2. After processing the whole riding, finalize the frozentotal (pop_vote)
         finalize_riding_votes(votes_by_riding, parties_by_riding, all_parties)
+        seatsprocessed = seatsprocessed + 1
 
 
                 # Now print the final updated pop_vote after finalizing
@@ -636,12 +779,12 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
 
         print(f'Completed all graphics for riding {riding["short_name"]} with final results: {riding["final_results"]}')
 
+
         # Update the 'seats_list' field in all_parties based on the seat allocation
         for party in all_parties:
             if party['name'] in seats_allocated:
                 party['seats_list'] = seats_allocated[party['name']]
-        if __name__ == "__main__":
-            # Define your file paths
+
 
             riding_name = riding['name']
             file_path = f'irlriding/{riding_name}.txt'
@@ -666,6 +809,8 @@ def generate_individual_graphics(ridings, all_parties, num_graphics, num_selecte
             print(f"Popular Vote: {party.get('pop_vote')}")
             print(f"Temporary Vote: {party.get('temp_vote')}")
             print("-" * 20)
+    print('end')
+    listcreation()
 
 
 
